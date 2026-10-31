@@ -1,0 +1,10 @@
+# Netlify configuration for globalaccess.live
+# Netlify detects Next.js automatically and applies its OpenNext-based runtime.
+
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "22"
+  NEXT_TELEMETRY_DISABLED = "1"
