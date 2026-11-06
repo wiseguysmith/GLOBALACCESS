@@ -26,6 +26,10 @@ Source IDs are listed so each photo can be traced and its photographer credited 
 | newsprint.webp | photo-1504711434969-e33886168f5c |
 | night-city.webp | photo-1444723121867-7a241cacace9 |
 | glass-x.webp | photo-1462899006636-339e08d1844e |
+| golf-aerial.webp | photo-1500932334442-8761ee4810a7 |
+| golf-green.webp | photo-1632946269126-0f8edbe8b068 |
+| people-reception.webp | photo-1515169067868-5387ec356754 (illustrative; captioned on site) |
+| people-table.webp | photo-1517048676732-d65bc937f952 (illustrative; captioned on site) |
 
 Event imagery (`event-golf.webp`, `event-dining.webp`, `event-san-antonio.webp`) was carried
 over from the Investor Golf Capital Summit site (igcs.netlify.app). Confirm usage rights for

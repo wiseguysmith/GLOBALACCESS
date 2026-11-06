@@ -14,10 +14,10 @@ export const initiatives: Record<InitiativeId, Initiative> = {
     navLabel: "Invitation",
     tagline: "Access Begins With Connection.",
     summary:
-      "A curated membership, experiences, and opportunity-access platform for a carefully selected international community.",
+      "Curated executive experiences, private gatherings, and thoughtful introductions — where relationships across the ecosystem begin.",
     description:
-      "Global Invitation brings together entrepreneurs, investors, institutional representatives, and strategic partners through curated membership, private gatherings, and considered introductions.",
-    role: "The engagement layer — where people enter the ecosystem and relationships begin.",
+      "Global Invitation brings together entrepreneurs, investors, institutional representatives, and strategic partners through curated experiences, private gatherings, and considered introductions. Participation is by invitation.",
+    role: "Creates relationships — curated experiences and introductions where trust begins.",
     href: "/invitation",
     image: {
       src: "/images/banquet.webp",
@@ -37,7 +37,7 @@ export const initiatives: Record<InitiativeId, Initiative> = {
       "Building pathways between international relationships, strategic partners, and opportunities across Global South markets — beginning with Latin America.",
     description:
       "Global South Access focuses on market access, regional partnerships, and cross-border collaboration, with an initial emphasis on Latin America and a longer-term outlook toward Africa and Southeast Asia.",
-    role: "The markets layer — regional understanding, partnerships, and cross-border pathways.",
+    role: "Connects regional markets and opportunities — partnerships and cross-border pathways.",
     href: "/south",
     image: {
       src: "/images/andes-city.webp",
@@ -57,7 +57,7 @@ export const initiatives: Record<InitiativeId, Initiative> = {
       "Exploring and coordinating the responsible digital transformation of real-world assets, from tokenization readiness to supporting infrastructure.",
     description:
       "Global Digital Access examines how real-world assets can move onto digital infrastructure responsibly — with legal clarity, data integrity, and compliance-aware technology at the foundation.",
-    role: "The infrastructure layer — readiness, technology partnerships, and interoperability.",
+    role: "Supports technology and financial infrastructure — readiness, partnerships, and interoperability.",
     href: "/digital",
     image: {
       src: "/images/grid.webp",
@@ -77,7 +77,7 @@ export const initiatives: Record<InitiativeId, Initiative> = {
       "A relationship network of family offices, institutional investors, financial professionals, and strategic capital partners.",
     description:
       "Global Capital Network develops long-term relationships across traditional and digital finance, centered on discretion, alignment, and qualified introductions.",
-    role: "The relationship layer — institutional dialogue across traditional and digital finance.",
+    role: "Develops strategic capital relationships across traditional and digital finance.",
     href: "/capital",
     image: {
       src: "/images/towers.webp",
@@ -96,7 +96,7 @@ export const initiatives: Record<InitiativeId, Initiative> = {
       "An editorial home for perspectives on global markets, financial innovation, technology, development, and international collaboration.",
     description:
       "Global Forum publishes considered perspectives, conversations, and event insights — an intellectual commons for the people and ideas shaping cross-border opportunity.",
-    role: "The ideas layer — editorial perspective, dialogue, and shared understanding.",
+    role: "Creates dialogue and understanding — perspectives, research, and conversation.",
     href: "/forum",
     image: {
       src: "/images/library.webp",
@@ -113,3 +113,56 @@ export const initiativeList: Initiative[] = [
   initiatives.capital,
   initiatives.forum,
 ];
+
+/**
+ * How the initiatives complement one another. Used by the interactive
+ * ecosystem map. These are relationships, not a fixed sequence or funnel:
+ * a relationship can begin in any initiative.
+ */
+export const ecosystemLinks: Record<InitiativeId, { verb: string; links: { to: InitiativeId; text: string }[] }> = {
+  invitation: {
+    verb: "Creates relationships",
+    links: [
+      { to: "forum", text: "Conversations at gatherings inform the perspectives Global Forum publishes." },
+      { to: "capital", text: "Experiences bring capital partners and builders into the same room." },
+      { to: "south", text: "Regional leaders meet international counterparts in person." },
+      { to: "digital", text: "Technology partners meet the institutions that may adopt their work." },
+    ],
+  },
+  forum: {
+    verb: "Creates dialogue and understanding",
+    links: [
+      { to: "invitation", text: "Shared ideas give gatherings their themes and substance." },
+      { to: "capital", text: "Perspectives on markets ground capital conversations in evidence." },
+      { to: "south", text: "Regional insight helps international partners understand context." },
+      { to: "digital", text: "Clear explanations make new infrastructure understandable." },
+    ],
+  },
+  capital: {
+    verb: "Develops strategic capital relationships",
+    links: [
+      { to: "invitation", text: "Relationships deepen through in-person experiences." },
+      { to: "south", text: "Capital partners gain perspective on regional markets." },
+      { to: "digital", text: "Institutions explore modern financial infrastructure with care." },
+      { to: "forum", text: "Market perspectives inform long-term thinking." },
+    ],
+  },
+  south: {
+    verb: "Connects regional markets and opportunities",
+    links: [
+      { to: "capital", text: "Regional opportunities meet relevant capital relationships." },
+      { to: "invitation", text: "Regional leaders join curated experiences and introductions." },
+      { to: "digital", text: "Infrastructure readiness supports cross-border projects." },
+      { to: "forum", text: "Local knowledge shapes the ecosystem’s perspective." },
+    ],
+  },
+  digital: {
+    verb: "Supports technology and financial infrastructure",
+    links: [
+      { to: "capital", text: "Institutions evaluate digital infrastructure with appropriate oversight." },
+      { to: "south", text: "Real-world assets in regional markets are assessed for readiness." },
+      { to: "forum", text: "Readiness frameworks are explained in plain language." },
+      { to: "invitation", text: "Technology leaders join gatherings and conversations." },
+    ],
+  },
+};

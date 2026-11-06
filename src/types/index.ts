@@ -64,7 +64,30 @@ export type ContentVerification = "verified" | "sample";
 export interface EventAgendaBlock {
   label: string;
   title: string;
+  /** One-line description used in event cards. */
+  summary?: string;
   items: string[];
+  /** Optional in-page or external link for more detail. */
+  link?: { label: string; href: string };
+}
+
+/** A golf tournament held as part of an event. */
+export interface GolfTournament {
+  name: string;
+  /** Short label, e.g. "Day One · Golf Tournament". */
+  eyebrow: string;
+  intro: string;
+  facts: { label: string; value: string; note?: string }[];
+  /** How the format works, step by step. */
+  format: { name: string; steps: { title: string; body: string }[]; scoring: string };
+  /** Why golf — the purpose of the day. */
+  rationale: string;
+  dayFlow: { title: string; body: string }[];
+  features: { title: string; body: string }[];
+  eligibility: string[];
+  /** Details intentionally not yet published. */
+  toBeAnnounced: string[];
+  images: { primary: ImageAsset; secondary: ImageAsset };
 }
 
 export interface GlobalEvent {
@@ -89,6 +112,7 @@ export interface GlobalEvent {
   tagline?: string;
   highlights?: { label: string; value: string; note?: string }[];
   agenda?: EventAgendaBlock[];
+  golf?: GolfTournament;
   themes?: string[];
   /** Themes for limited-access private salons. */
   salonThemes?: string[];

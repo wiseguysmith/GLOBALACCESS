@@ -51,6 +51,12 @@ const nextConfig: NextConfig = {
       },
     },
   },
+  async redirects() {
+    return [
+      // Global Invitation no longer offers membership; keep old links working.
+      { source: "/invitation/membership", destination: "/invitation/participation", permanent: true },
+    ];
+  },
   async headers() {
     return [
       { source: "/:path*", headers: securityHeaders },

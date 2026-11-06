@@ -106,9 +106,9 @@ export function ApplicationForm({ enabled }: { enabled: boolean }) {
           Thank you. Your request has been received.
         </h2>
         <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">
-          Every request is reviewed personally. If there is alignment, a member of the Global
-          Invitation team will be in touch to arrange an introductory conversation. We are not
-          able to respond to every request individually.
+          Every request is reviewed personally. If there is alignment, someone from the GLOBAL
+          team will be in touch to arrange an introductory conversation. We are not able to
+          respond to every request individually.
         </p>
         {reference ? (
           <p className="mt-6 text-sm text-slate">

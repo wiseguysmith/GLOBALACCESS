@@ -16,7 +16,7 @@ export const interestOptions = [
 
 export const inquiryTopics = [
   { value: "general", label: "General inquiry" },
-  { value: "membership", label: "Global Invitation membership" },
+  { value: "experiences", label: "Global Invitation experiences and events" },
   { value: "partnership", label: "Partnership or sponsorship" },
   { value: "south", label: "Global South Access" },
   { value: "digital", label: "Global Digital Access" },

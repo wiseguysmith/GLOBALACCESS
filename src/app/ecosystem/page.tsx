@@ -6,7 +6,7 @@ import { ButtonLink, ArrowLink } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PageHero } from "@/components/sections/PageHero";
-import { ProcessSteps } from "@/components/sections/ProcessSteps";
+import { EcosystemMap } from "@/components/sections/EcosystemMap";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { GlobalMark } from "@/components/ui/Wordmark";
 import { JsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
@@ -17,13 +17,6 @@ export const metadata = buildMetadata({
     "Five connected initiatives — Global Invitation, Global South Access, Global Digital Access, Global Capital Network, and Global Forum — sharing one philosophy and one set of standards.",
   path: "/ecosystem",
 });
-
-const flow = [
-  { title: "Ideas", body: "Global Forum frames the questions and shares perspective." },
-  { title: "Connection", body: "Global Invitation brings people together and builds trust." },
-  { title: "Focus", body: "South Access, Digital Access, and Capital Network give relationships direction." },
-  { title: "Collaboration", body: "Aligned parties work together — with qualified specialists where required." },
-];
 
 export default function EcosystemPage() {
   return (
@@ -130,11 +123,16 @@ export default function EcosystemPage() {
           <SectionHeading
             id="flow-heading"
             eyebrow="How it fits together"
-            title="From an idea to a working relationship."
-            intro={<p>An illustration of how the initiatives complement one another.</p>}
+            title="How the initiatives complement one another."
+            intro={
+              <p>
+                There is no fixed path through GLOBAL. Select an initiative to see how it works with
+                the others — a relationship can begin anywhere and grow wherever it is most useful.
+              </p>
+            }
           />
-          <div className="mt-16 lg:mt-24">
-            <ProcessSteps steps={flow} label="How the ecosystem fits together" />
+          <div className="mt-16 lg:mt-20">
+            <EcosystemMap />
           </div>
         </div>
       </section>
@@ -147,11 +145,11 @@ export default function EcosystemPage() {
             Access Begins With <span className="serif-accent text-gold">Connection.</span>
           </>
         }
-        body={<p>For most people, the ecosystem begins with Global Invitation.</p>}
+        body={<p>Explore our experiences, or start a conversation about where you fit.</p>}
         actions={
           <>
-            <ButtonLink href="/invitation/apply" size="lg">
-              Request an Invitation
+            <ButtonLink href="/invitation/experiences" size="lg">
+              Explore Experiences
             </ButtonLink>
             <ButtonLink href="/contact" variant="outline-dark" size="lg">
               Connect With GLOBAL

@@ -16,7 +16,7 @@ export const siteConfig = {
   url: resolveSiteUrl(),
   tagline: "Bridging Worlds. Expanding Access.",
   description:
-    "GLOBAL is an international ecosystem connecting capital, technology, markets, and people to unlock meaningful opportunities across borders.",
+    "GLOBAL is an international ecosystem connecting influential people, capital, markets, and technology through curated relationships, strategic partnerships, and distinctive experiences.",
   locale: "en_US",
   /**
    * Social profiles render in the footer only when supplied.
@@ -44,8 +44,8 @@ export const primaryCta: NavItem = { label: "Connect With GLOBAL", href: "/conta
 
 export const invitationNav: NavItem[] = [
   { label: "Overview", href: "/invitation" },
-  { label: "Membership", href: "/invitation/membership" },
   { label: "Experiences", href: "/invitation/experiences" },
+  { label: "Participation", href: "/invitation/participation" },
   { label: "Opportunities", href: "/invitation/opportunities" },
   { label: "Apply", href: "/invitation/apply" },
 ];
@@ -57,4 +57,4 @@ export const legalNav: NavItem[] = [
 
 /** Shown in the footer and on initiative pages. Draft wording — subject to legal review. */
 export const regulatoryNotice =
-  "GLOBAL and its initiatives facilitate relationships, dialogue, and collaboration. Nothing on this website is an offer to sell, or a solicitation of an offer to buy, any security or financial product, and nothing here constitutes investment, legal, or tax advice. GLOBAL is not a registered broker-dealer, investment adviser, or bank. Membership or participation does not guarantee access to any investment, transaction, or financial product.";
+  "GLOBAL and its initiatives facilitate relationships, dialogue, and collaboration. Nothing on this website is an offer to sell, or a solicitation of an offer to buy, any security or financial product, and nothing here constitutes investment, legal, or tax advice. GLOBAL is not a registered broker-dealer, investment adviser, or bank. Participation in GLOBAL experiences or initiatives does not guarantee access to any investment, transaction, or financial product.";

@@ -25,7 +25,7 @@ const lookFor = [
 const next = [
   "We read your request personally.",
   "If there may be a fit, we arrange an introductory conversation.",
-  "Approved members are welcomed into the community and its experiences.",
+  "Invitations to selected gatherings are extended individually.",
 ];
 
 export default function ApplyPage() {
@@ -86,7 +86,7 @@ export default function ApplyPage() {
                 <ShieldCheck aria-hidden="true" className="mt-0.5 size-5 shrink-0 text-gold-ink" strokeWidth={1.5} />
                 <p>
                   Your information is used only to review your request and is never published or
-                  shared with other members without your consent. See our{" "}
+                  shared with other participants without your consent. See our{" "}
                   <Link href="/privacy" className="text-ink underline decoration-gold underline-offset-3">
                     Privacy Policy
                   </Link>
@@ -98,7 +98,7 @@ export default function ApplyPage() {
           <div className="lg:col-span-8">
             <ApplicationForm enabled={enabled} />
             <p className="mt-6 text-xs leading-relaxed text-slate">
-              Submitting a request does not guarantee an invitation. Membership does not imply or
+              Submitting a request does not guarantee an invitation. Participation does not imply or
               guarantee access to investments, financial products, or transactions.
             </p>
           </div>

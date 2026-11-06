@@ -86,7 +86,21 @@ export function EventFeature({ event }: { event: GlobalEvent }) {
           </Link>
         </h3>
         {event.tagline ? <p className="serif-accent mt-3 text-xl text-white/85">{event.tagline}</p> : null}
-        <p className="mt-5 leading-relaxed text-mist">{event.summary}</p>
+        {event.agenda?.some((b) => b.summary) ? (
+          <ul className="mt-7 border-t border-white/15">
+            {event.agenda.map((block) => (
+              <li key={block.label} className="border-b border-white/15 py-4">
+                <p className="eyebrow text-[0.65rem] text-gold">{block.label}</p>
+                <p className="mt-1.5 font-display text-lg font-medium text-white">{block.title}</p>
+                {block.summary ? (
+                  <p className="mt-1 text-[0.92rem] leading-relaxed text-mist">{block.summary}</p>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p className="mt-5 leading-relaxed text-mist">{event.summary}</p>
+        )}
         <div className="mt-8">
           <EventMeta event={event} tone="dark" />
         </div>

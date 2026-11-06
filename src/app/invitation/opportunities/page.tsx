@@ -25,7 +25,7 @@ export const metadata = buildMetadata({
 const introductionSteps = [
   {
     title: "Understand",
-    body: "We start by learning what each member is working on, what they need, and what they can offer.",
+    body: "We start by learning what each participant is working on, what they need, and what they can offer.",
   },
   {
     title: "Identify",
@@ -33,7 +33,7 @@ const introductionSteps = [
   },
   {
     title: "Consent",
-    body: "Introductions are made only with the agreement of both parties — never by circulating member details.",
+    body: "Introductions are made only with the agreement of both parties — never by circulating personal details.",
   },
   {
     title: "Connect",
@@ -64,7 +64,7 @@ export default function OpportunitiesPage() {
         }
         lede={
           <p>
-            Membership can open the door to relevant introductions, partnerships, and initiatives
+            Global Invitation can open the door to relevant introductions, partnerships, and initiatives
             across the GLOBAL ecosystem — always through considered, mutually agreed connections.
           </p>
         }
@@ -84,7 +84,7 @@ export default function OpportunitiesPage() {
             title="Relationships with purpose."
             intro={
               <p>
-                Opportunities emerge from the community itself — from the people members meet, the
+                Opportunities emerge from the community itself — from the people participants meet, the
                 conversations they join, and the initiatives they choose to engage with.
               </p>
             }
@@ -114,10 +114,10 @@ export default function OpportunitiesPage() {
           <div className="lg:col-span-5">
             <Eyebrow tone="dark">Across the ecosystem</Eyebrow>
             <h2 id="across-heading" className="text-headline mt-6">
-              One membership. <span className="serif-accent text-gold">A wider ecosystem.</span>
+              One relationship. <span className="serif-accent text-gold">A wider ecosystem.</span>
             </h2>
             <p className="text-lede mt-7 text-mist">
-              Global Invitation connects members to the other GLOBAL initiatives, where their
+              Global Invitation connects participants to the other GLOBAL initiatives, where their
               interests and expertise are relevant.
             </p>
           </div>
@@ -145,7 +145,7 @@ export default function OpportunitiesPage() {
         <div className="container-x">
           <NoticePanel title="What Global Invitation is not" className="max-w-4xl">
             Global Invitation is not a securities marketplace, broker, or investment platform. It does
-            not offer, sell, recommend, or arrange investments or financial products. Membership
+            not offer, sell, recommend, or arrange investments or financial products. Participation
             does not guarantee access to any investment or transaction. Any regulated activity is
             the sole responsibility of appropriately licensed parties.
           </NoticePanel>

@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { CalendarDays, MapPin } from "lucide-react";
+import Link from "next/link";
+import { ArrowDown, CalendarDays, Flag, MapPin } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig, invitationNav } from "@/config/site";
 import { getEvent, getEvents } from "@/content/events";
@@ -10,6 +11,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PageHero } from "@/components/sections/PageHero";
 import { SectionNav } from "@/components/navigation/SectionNav";
 import { EventBadges } from "@/components/sections/Events";
+import { GolfTournamentSection } from "@/components/sections/GolfTournament";
 import { SplitFeature } from "@/components/sections/SplitFeature";
 import { NoticePanel } from "@/components/sections/NoticePanel";
 import { CtaBand } from "@/components/sections/CtaBand";
@@ -91,6 +93,17 @@ export default async function EventPage({ params }: PageProps<"/invitation/exper
               <CalendarDays aria-hidden="true" className="size-4 text-gold" strokeWidth={1.5} />
               <dd>{event.dateLabel}</dd>
             </div>
+            {event.golf ? (
+              <div className="flex items-center gap-2.5">
+                <dt className="sr-only">Golf tournament</dt>
+                <Flag aria-hidden="true" className="size-4 text-gold" strokeWidth={1.5} />
+                <dd>
+                  <Link href="#golf" className="underline decoration-gold/60 underline-offset-4 hover:text-white">
+                    {event.golf.name} golf tournament
+                  </Link>
+                </dd>
+              </div>
+            ) : null}
           </dl>
           <EventBadges event={event} tone="dark" />
         </div>
@@ -155,6 +168,7 @@ export default async function EventPage({ params }: PageProps<"/invitation/exper
                 <li key={block.label} data-reveal className="rounded-sm border border-white/15 bg-white/[0.02] p-8 sm:p-10">
                   <p className="eyebrow text-gold">{block.label}</p>
                   <h3 className="mt-3 font-display text-3xl font-medium tracking-[-0.025em]">{block.title}</h3>
+                  {block.summary ? <p className="mt-3 leading-relaxed text-mist">{block.summary}</p> : null}
                   <ul className="mt-8 space-y-4 border-t border-white/15 pt-8">
                     {block.items.map((item) => (
                       <li key={item} className="flex gap-4 leading-relaxed text-white/85">
@@ -163,11 +177,28 @@ export default async function EventPage({ params }: PageProps<"/invitation/exper
                       </li>
                     ))}
                   </ul>
+                  {block.link ? (
+                    <Link
+                      href={block.link.href}
+                      className="mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium text-gold hover:text-gold-soft"
+                    >
+                      {block.link.label}
+                      <ArrowDown aria-hidden="true" className="size-4" strokeWidth={1.75} />
+                    </Link>
+                  ) : null}
                 </li>
               ))}
             </ol>
           </div>
         </section>
+      ) : null}
+
+      {event.golf ? (
+        <GolfTournamentSection
+          golf={event.golf}
+          requestHref={`/invitation/apply?interest=Events%20and%20Experiences&event=${encodeURIComponent(`${event.golf.name} — golf tournament`)}`}
+          partnerHref="/contact?topic=partnership"
+        />
       ) : null}
 
       {event.themes?.length || event.salonThemes?.length ? (

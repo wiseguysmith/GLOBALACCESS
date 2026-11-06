@@ -82,7 +82,7 @@ export function InquiryForm({ enabled }: { enabled: boolean }) {
           Thank you. Your message has been received.
         </h2>
         <p className="mt-4 max-w-xl leading-relaxed text-ink-soft">
-          We read every message. Where there is a clear fit, a member of the team will follow up
+          We read every message. Where there is a clear fit, someone from our team will follow up
           by email.
         </p>
         {reference ? (

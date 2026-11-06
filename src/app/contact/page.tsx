@@ -10,12 +10,12 @@ import { JsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 export const metadata = buildMetadata({
   title: "Contact — Connect With GLOBAL",
   description:
-    "Connect with GLOBAL about membership, partnerships, or any of our initiatives: Global Invitation, Global South Access, Global Digital Access, Global Capital Network, and Global Forum.",
+    "Connect with GLOBAL about experiences, partnerships, introductions, or any of our initiatives: Global Invitation, Global South Access, Global Digital Access, Global Capital Network, and Global Forum.",
   path: "/contact",
 });
 
 const pathways = [
-  { label: "Request an invitation", body: "Membership in Global Invitation", href: "/invitation/apply" },
+  { label: "Request an invitation", body: "Global Invitation experiences and gatherings", href: "/invitation/apply" },
   { label: "Partnership or sponsorship", body: "Including The Global Invitation, San Antonio", href: "/contact?topic=partnership" },
   { label: "Global South Access", body: "Regional partnerships and market access", href: "/contact?topic=south" },
   { label: "Global Digital Access", body: "Technology and infrastructure partnerships", href: "/contact?topic=digital" },

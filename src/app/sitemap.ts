@@ -6,7 +6,7 @@ import { getArticles } from "@/content/forum";
 const staticRoutes: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
   { path: "/invitation", priority: 0.9 },
-  { path: "/invitation/membership", priority: 0.8 },
+  { path: "/invitation/participation", priority: 0.8 },
   { path: "/invitation/experiences", priority: 0.8 },
   { path: "/invitation/opportunities", priority: 0.7 },
   { path: "/invitation/apply", priority: 0.8 },

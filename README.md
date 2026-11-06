@@ -13,7 +13,7 @@ The website for GLOBAL (Global Access), an international ecosystem of five conne
 | `/capital` | Global Capital Network (GCN) | Where Capital Relationships Begin. |
 | `/forum` | Global Forum | Ideas That Cross Borders. |
 
-Supporting routes: `/about`, `/ecosystem`, `/invitation/membership`, `/invitation/experiences`,
+Supporting routes: `/about`, `/ecosystem`, `/invitation/participation`, `/invitation/experiences`,
 `/invitation/experiences/[slug]`, `/invitation/opportunities`, `/invitation/apply`, `/forum/[slug]`,
 `/contact`, `/privacy`, `/terms`, plus `/sitemap.xml` and `/robots.txt`.
 
@@ -107,7 +107,7 @@ Nothing is silently discarded.**
 | --- | --- | --- |
 | Supabase (recommended) | `SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY` | Run `supabase/schema.sql` first. RLS is on with no public policies. |
 | Webhook (n8n, Make, Zapier) | `SUBMISSIONS_WEBHOOK_URL`, `SUBMISSIONS_WEBHOOK_SECRET` | HTTPS only in production; HMAC signature in `X-Global-Signature`. |
-| Email via Resend | `RESEND_API_KEY`, `SUBMISSIONS_NOTIFY_TO`, `SUBMISSIONS_NOTIFY_FROM` | Sender domain must be verified in Resend. |
+| Email via Resend (chosen) | `RESEND_API_KEY`, `SUBMISSIONS_NOTIFY_TO`, `SUBMISSIONS_NOTIFY_FROM` | Sender domain must be verified in Resend. Step-by-step: `docs/RESEND_SETUP.md`. |
 | Local file (dev only) | `SUBMISSIONS_DEV_STORE=file` | Writes `.data/submissions.ndjson`; ignored in production. |
 
 Pages are prerendered, so **redeploy after changing these variables** to update the
@@ -163,6 +163,12 @@ Deploy previews and branch deploys are automatically marked `noindex` through `r
 Photography is from [Unsplash](https://unsplash.com) under the Unsplash License, except
 `event-golf.webp`, `event-dining.webp`, and `event-san-antonio.webp`, which come from the
 existing Investor Golf Capital Summit site. See `public/images/CREDITS.md`.
+
+## No membership
+
+GLOBAL does not run a membership program. Global Invitation participation happens through
+curated introductions, event inquiries, and individual invitations (Discover → Connect → Private
+Access). `/invitation/membership` permanently redirects to `/invitation/participation`.
 
 ## Content approvals and open items
 

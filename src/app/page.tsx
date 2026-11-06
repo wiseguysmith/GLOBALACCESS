@@ -6,16 +6,19 @@ import {
   BridgingWorldsSection,
   ConnectSection,
   EcosystemSection,
+  FeaturedExperienceSection,
   HeroIndex,
-  InvitationFeatureSection,
+  HumanElementSection,
+  PerspectivesSection,
   PhilosophySection,
 } from "@/components/sections/home/HomeSections";
+import { AccessLevels } from "@/components/sections/AccessLevels";
 
 export const metadata = {
   ...buildMetadata({
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
     description:
-      "GLOBAL connects capital, technology, markets, and people to unlock meaningful opportunities across borders — through Global Invitation, Global South Access, Global Digital Access, Global Capital Network, and Global Forum.",
+      "GLOBAL is an international ecosystem connecting people, capital, markets, and technology through curated relationships, strategic partnerships, and distinctive experiences.",
     path: "/",
   }),
   title: { absolute: `${siteConfig.name} — ${siteConfig.tagline}` },
@@ -41,27 +44,30 @@ export default function HomePage() {
         }
         lede={
           <p>
-            Connecting capital, technology, markets, and people to unlock meaningful opportunities
-            across borders.
+            An international ecosystem connecting people, capital, markets, and technology through
+            curated relationships and strategic collaboration.
           </p>
         }
         actions={
           <>
             <ButtonLink href="/ecosystem" size="lg">
-              Explore Our Ecosystem
+              Explore GLOBAL
             </ButtonLink>
-            <ButtonLink href="/invitation" variant="outline-dark" size="lg">
-              Discover Global Invitation
+            <ButtonLink href="/invitation/experiences" variant="outline-dark" size="lg">
+              Discover Our Experiences
             </ButtonLink>
           </>
         }
       >
         <HeroIndex />
       </PageHero>
+      <HumanElementSection />
       <EcosystemSection />
       <BridgingWorldsSection />
+      <FeaturedExperienceSection />
+      <PerspectivesSection />
       <PhilosophySection />
-      <InvitationFeatureSection />
+      <AccessLevels />
       <ConnectSection />
     </>
   );

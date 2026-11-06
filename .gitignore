@@ -45,3 +45,6 @@ next-env.d.ts
 
 # allow the documented example env file
 !.env.example
+
+# files saved by the Claude desktop app
+/Claude outputs/

@@ -15,7 +15,7 @@ import { JsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 export const metadata = buildMetadata({
   title: "Experiences — Global Invitation",
   description:
-    "Private gatherings, leadership forums, investor salons, and international summits from Global Invitation — including The Global Invitation in San Antonio, February 2027.",
+    "Private gatherings, leadership forums, investor salons, and international summits from Global Invitation — including The Global Invitation in San Antonio, February 2027, and its golf tournament, The Global Invitational.",
   path: "/invitation/experiences",
 });
 
@@ -64,9 +64,9 @@ export default function ExperiencesPage() {
             title="The Global Invitation — San Antonio, 2027."
             intro={
               <p>
-                Our first flagship gathering: two days on the course and in the room, bringing
-                together private markets, modern financial infrastructure, and the relationships that
-                connect them.
+                Our first flagship gathering opens with The Global Invitational, a two-person
+                scramble golf tournament at Briggs Ranch Golf Club, followed by a day of capital
+                summit sessions and private investor salons.
               </p>
             }
           />
@@ -82,8 +82,8 @@ export default function ExperiencesPage() {
             title="Upcoming experiences."
             intro={
               <p>
-                Experiences are announced here once they are confirmed. Many are shared directly with
-                members first.
+                Public information about experiences is shared here once confirmed. Some gatherings
+                are private and shared directly with invited guests.
               </p>
             }
           />
@@ -99,7 +99,7 @@ export default function ExperiencesPage() {
             <div className="mt-14 rounded-sm border border-dashed border-navy/20 p-10 text-center">
               <p className="font-display text-xl text-ink">Further experiences will be announced.</p>
               <p className="mt-2 text-ink-soft">
-                Members and those who have requested an invitation are informed first.
+                Those who have requested an invitation or shared an inquiry are informed first.
               </p>
             </div>
           )}
@@ -139,7 +139,7 @@ export default function ExperiencesPage() {
               <Lock aria-hidden="true" className="size-6 text-gold" strokeWidth={1.25} />
               <h3 className="mt-6 font-display text-2xl font-medium">Invitation only</h3>
               <p className="mt-3 leading-relaxed text-mist">
-                Most Global Invitation experiences are reserved for members and invited guests.
+                Most Global Invitation experiences are private and reserved for invited guests.
                 Requests are reviewed individually, and capacity is deliberately limited. Some
                 elements — such as private salons — have further limited access.
               </p>

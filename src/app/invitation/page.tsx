@@ -12,6 +12,7 @@ import { SectionNav } from "@/components/navigation/SectionNav";
 import { ProcessSteps } from "@/components/sections/ProcessSteps";
 import { EventFeature } from "@/components/sections/Events";
 import { NoticePanel } from "@/components/sections/NoticePanel";
+import { AccessLevels } from "@/components/sections/AccessLevels";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { JsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
 import { audiences, journeySteps, opportunityTypes, pillars } from "@/content/invitation";
@@ -19,7 +20,7 @@ import { audiences, journeySteps, opportunityTypes, pillars } from "@/content/in
 export const metadata = buildMetadata({
   title: "Global Invitation — Access Begins With Connection",
   description:
-    "Global Invitation is a curated international community connecting exceptional people, meaningful experiences, and emerging opportunities. Membership is by invitation.",
+    "Global Invitation offers curated executive experiences, private gatherings, and thoughtful introductions across borders. Participation is by invitation; there is no membership.",
   path: "/invitation",
 });
 
@@ -49,8 +50,8 @@ export default function InvitationPage() {
         }
         lede={
           <p>
-            A curated international community connecting exceptional people, meaningful
-            experiences, and emerging opportunities.
+            Curated executive experiences, private gatherings, and thoughtful introductions —
+            connecting exceptional people across borders, by invitation.
           </p>
         }
         actions={
@@ -120,6 +121,36 @@ export default function InvitationPage() {
         </div>
       </section>
 
+      {/* Experiences */}
+      <section aria-labelledby="experiences-heading" className="bg-paper py-24 sm:py-32 lg:py-40">
+        <div className="container-x">
+          <SectionHeading
+            id="experiences-heading"
+            eyebrow="Experiences"
+            title="Gatherings designed for real conversation."
+            intro={
+              <p>
+                Private dinners, leadership forums, investor gatherings, and international summits —
+                intimate by design, and curated so that every participant adds to the room.
+              </p>
+            }
+          />
+          <div className="mt-16 lg:mt-20">
+            {flagship ? <EventFeature event={flagship} /> : null}
+            {otherEvents.length === 0 ? (
+              <p className="mt-8 text-sm text-slate">
+                Further experiences will be announced as they are confirmed.
+              </p>
+            ) : null}
+          </div>
+          <div className="mt-10">
+            <ArrowLink href="/invitation/experiences" className="text-ink">
+              View all experiences
+            </ArrowLink>
+          </div>
+        </div>
+      </section>
+
       {/* Who it's for */}
       <section
         aria-labelledby="audience-heading"
@@ -156,12 +187,14 @@ export default function InvitationPage() {
         </div>
       </section>
 
+      <AccessLevels headingId="access-heading" eyebrow="Public information, private invitations" surface="midnight" />
+
       {/* Journey */}
       <section aria-labelledby="journey-heading" className="bg-ivory py-24 sm:py-32 lg:py-40">
         <div className="container-x">
           <SectionHeading
             id="journey-heading"
-            eyebrow="Membership Journey"
+            eyebrow="From inquiry to invitation"
             title="A considered path to participation."
             intro={
               <p>
@@ -171,45 +204,15 @@ export default function InvitationPage() {
             }
           />
           <div className="mt-16 lg:mt-24">
-            <ProcessSteps steps={journeySteps} label="Membership journey" />
+            <ProcessSteps steps={journeySteps} label="From inquiry to invitation" />
           </div>
           <div className="mt-16 flex flex-col gap-3 xs:flex-row">
             <ButtonLink href="/invitation/apply" variant="solid-navy" size="lg">
               Request an Invitation
             </ButtonLink>
-            <ButtonLink href="/invitation/membership" variant="outline-light" size="lg">
-              About membership
+            <ButtonLink href="/invitation/participation" variant="outline-light" size="lg">
+              How participation works
             </ButtonLink>
-          </div>
-        </div>
-      </section>
-
-      {/* Experiences */}
-      <section aria-labelledby="experiences-heading" className="bg-paper py-24 sm:py-32 lg:py-40">
-        <div className="container-x">
-          <SectionHeading
-            id="experiences-heading"
-            eyebrow="Experiences"
-            title="Gatherings designed for real conversation."
-            intro={
-              <p>
-                Private dinners, leadership forums, investor gatherings, and international summits —
-                intimate by design, and curated so that every participant adds to the room.
-              </p>
-            }
-          />
-          <div className="mt-16 lg:mt-20">
-            {flagship ? <EventFeature event={flagship} /> : null}
-            {otherEvents.length === 0 ? (
-              <p className="mt-8 text-sm text-slate">
-                Further experiences will be announced to the community as they are confirmed.
-              </p>
-            ) : null}
-          </div>
-          <div className="mt-10">
-            <ArrowLink href="/invitation/experiences" className="text-ink">
-              View all experiences
-            </ArrowLink>
           </div>
         </div>
       </section>
@@ -223,12 +226,12 @@ export default function InvitationPage() {
               Where connection becomes collaboration.
             </h2>
             <p className="text-lede mt-7 text-ink-soft">
-              Membership can open the door to relevant conversations across the GLOBAL ecosystem —
-              always through considered introductions and mutual interest.
+              Global Invitation can open the door to relevant conversations across the GLOBAL
+              ecosystem — always through considered introductions and mutual interest.
             </p>
             <NoticePanel className="mt-10" title="What opportunities are — and are not">
               Global Invitation is not an investment marketplace. It does not offer, sell, or arrange
-              securities or financial products, and membership does not guarantee access to any
+              securities or financial products, and participation does not guarantee access to any
               investment or transaction.
             </NoticePanel>
           </div>

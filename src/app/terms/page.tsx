@@ -38,13 +38,13 @@ export default function TermsPage() {
         You should consult your own qualified advisors before making any decision.
       </p>
 
-      <h2>3. Membership and participation</h2>
+      <h2>3. Invitations and participation</h2>
       <p>
-        Requesting an invitation does not guarantee acceptance. Membership in Global Invitation, and
-        participation in any GLOBAL experience or initiative, is at our discretion and subject to
-        separate terms communicated to approved members. Membership or participation does not imply
-        or guarantee access to any investment, transaction, financial product, introduction, or
-        outcome.
+        GLOBAL does not operate a membership program. Requesting an invitation does not guarantee
+        acceptance. Participation in any GLOBAL experience or initiative is at our discretion and
+        may be subject to separate terms communicated to invited participants. Participation does
+        not imply or guarantee access to any investment, transaction, financial product,
+        introduction, or outcome.
       </p>
 
       <h2>4. Events</h2>

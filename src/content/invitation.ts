@@ -1,5 +1,11 @@
 import type { ImageAsset } from "@/types";
 
+/**
+ * Global Invitation content.
+ * Global Invitation is not a membership program: participation happens through
+ * curated introductions, event inquiries, and individual invitations.
+ */
+
 export const pillars: {
   title: string;
   kicker: string;
@@ -8,19 +14,9 @@ export const pillars: {
   image: ImageAsset;
 }[] = [
   {
-    title: "Membership",
-    kicker: "A curated international network",
-    body: "A carefully selected community of entrepreneurs, innovators, investors, institutional representatives, founders, and strategic partners.",
-    href: "/invitation/membership",
-    image: {
-      src: "/images/restaurant.webp",
-      alt: "A quiet, elegantly furnished dining room with dark wood and soft lighting",
-    },
-  },
-  {
     title: "Experiences",
     kicker: "Gatherings worth the journey",
-    body: "Private dinners, leadership forums, investor gatherings, summits, and curated experiences designed around meaningful conversation.",
+    body: "Private dinners, leadership forums, investor gatherings, and international events, designed around meaningful conversation.",
     href: "/invitation/experiences",
     image: {
       src: "/images/event-golf.webp",
@@ -28,9 +24,19 @@ export const pillars: {
     },
   },
   {
-    title: "Opportunities",
+    title: "Relationships",
     kicker: "Introductions with intent",
-    body: "Strategic introductions, collaborations, partnerships, and access to relevant initiatives across the GLOBAL ecosystem.",
+    body: "Thoughtful, mutually agreed introductions between people whose experience and ambitions align.",
+    href: "/invitation/participation",
+    image: {
+      src: "/images/restaurant.webp",
+      alt: "A quiet, elegantly furnished dining room with dark wood and soft lighting",
+    },
+  },
+  {
+    title: "Opportunities",
+    kicker: "Where collaboration begins",
+    body: "Strategic partnerships, collaborations, and pathways to relevant initiatives across the GLOBAL ecosystem.",
     href: "/invitation/opportunities",
     image: {
       src: "/images/boardroom.webp",
@@ -66,26 +72,52 @@ export const audiences = [
   },
 ];
 
+/** How participation works — invitation-based, not a membership process. */
 export const journeySteps = [
   {
     title: "Discover",
-    body: "Learn about Global Invitation, its principles, and the experiences it convenes.",
+    body: "Learn about GLOBAL, its initiatives, and the experiences Global Invitation convenes.",
   },
   {
-    title: "Request an Invitation",
-    body: "Share your background and what you hope to contribute to — and gain from — the community.",
+    title: "Inquire",
+    body: "Request an invitation or share an inquiry about an experience, partnership, or introduction.",
   },
   {
-    title: "Application Review",
-    body: "Each request is reviewed individually for alignment with the community and its standards.",
+    title: "Conversation",
+    body: "Each inquiry is reviewed personally. Where there may be a fit, we arrange a conversation.",
   },
   {
-    title: "Introduction and Alignment",
-    body: "Where there is a potential fit, we arrange a conversation to understand your goals.",
+    title: "Alignment",
+    body: "We explore which experiences, introductions, or initiatives are genuinely relevant.",
   },
   {
-    title: "Approved Participation",
-    body: "Approved members are welcomed into the community, its experiences, and its conversations.",
+    title: "Invitation",
+    body: "Invitations to selected gatherings and conversations are extended individually.",
+  },
+];
+
+/** Three ways of engaging with GLOBAL. These are not membership tiers. */
+export const accessLevels = [
+  {
+    name: "Discover",
+    kicker: "Open to everyone",
+    body: "Explore GLOBAL, its initiatives, upcoming experiences, and perspectives published through Global Forum.",
+    includes: ["The ecosystem and its initiatives", "Public event information", "GLOBAL Perspectives"],
+    cta: { label: "Explore GLOBAL", href: "/ecosystem" },
+  },
+  {
+    name: "Connect",
+    kicker: "Start a conversation",
+    body: "Reach out about an experience, a partnership, an introduction, or an opportunity relevant to your work.",
+    includes: ["Event and experience inquiries", "Partnership conversations", "Introductions, where relevant"],
+    cta: { label: "Connect With GLOBAL", href: "/contact" },
+  },
+  {
+    name: "Private Access",
+    kicker: "By invitation",
+    body: "Invitation-based participation in selected gatherings and conversations, extended individually after a personal conversation.",
+    includes: ["Private dinners and salons", "Invitation-only gatherings", "Curated introductions"],
+    cta: { label: "Request an Invitation", href: "/invitation/apply" },
   },
 ];
 
@@ -96,11 +128,11 @@ export const opportunityTypes = [
   },
   {
     title: "Business development",
-    body: "Conversations that help members understand new markets, sectors, and counterparts.",
+    body: "Conversations that help participants understand new markets, sectors, and counterparts.",
   },
   {
     title: "Collaboration",
-    body: "Joint initiatives, shared projects, and knowledge exchange among members.",
+    body: "Joint initiatives, shared projects, and knowledge exchange.",
   },
   {
     title: "Introductions",
@@ -116,18 +148,18 @@ export const opportunityTypes = [
   },
 ];
 
-export const membershipPrinciples = [
+export const participationPrinciples = [
   {
     title: "Discretion",
-    body: "What is shared within the community stays within the community. Members respect one another’s privacy, plans, and relationships.",
+    body: "What is shared in private conversations stays private. Participants respect one another’s plans and relationships.",
   },
   {
     title: "Reciprocity",
-    body: "Members participate to contribute as well as to gain — through perspective, experience, and generosity with their networks.",
+    body: "People take part to contribute as well as to gain — through perspective, experience, and generosity with their networks.",
   },
   {
     title: "Integrity",
-    body: "Honest representation of who members are, what they do, and what they are seeking.",
+    body: "Honest representation of who participants are, what they do, and what they are seeking.",
   },
   {
     title: "Curiosity",
@@ -138,11 +170,11 @@ export const membershipPrinciples = [
 export const experienceFormats = [
   {
     title: "Flagship gatherings",
-    body: "Multi-day convenings that bring the wider community together around a shared program of conversation and hospitality.",
+    body: "Multi-day convenings built around a shared program of conversation and hospitality.",
   },
   {
     title: "Private dinners",
-    body: "Small, hosted dinners where a handful of members can speak candidly and at length.",
+    body: "Small, hosted dinners where a handful of guests can speak candidly and at length.",
   },
   {
     title: "Leadership forums",

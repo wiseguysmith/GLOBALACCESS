@@ -171,7 +171,7 @@ export default function AboutPage() {
         eyebrow="Connect"
         image={{ src: "/images/hero-horizon.webp", alt: "" }}
         title="Find Your Place in GLOBAL."
-        body={<p>Explore membership, discuss a partnership, or simply start a conversation.</p>}
+        body={<p>Explore our experiences, discuss a partnership, or simply start a conversation.</p>}
         actions={
           <>
             <ButtonLink href="/contact" size="lg">
