@@ -53,7 +53,7 @@ export function EcosystemSection() {
           }
           intro={
             <p>
-              Each GLOBAL initiative has its own focus — membership, markets, infrastructure,
+              Each GLOBAL initiative has its own focus — experiences, markets, infrastructure,
               capital relationships, and ideas. Together they form a single ecosystem, designed so
               that a relationship formed in one place can find its purpose in another.
             </p>
@@ -231,9 +231,9 @@ export function InvitationFeatureSection() {
   const flagship = getFlagshipEvent();
   const pillars = [
     {
-      title: "Membership",
-      body: "A curated network of globally minded individuals and institutions.",
-      href: "/invitation/membership",
+      title: "San Antonio 2027",
+      body: "February 3–4: Briggs Ranch golf and the Future in Finance Summit.",
+      href: "/invitation/experiences/the-global-invitation-san-antonio-2027",
     },
     {
       title: "Experiences",
@@ -293,7 +293,7 @@ export function InvitationFeatureSection() {
             <span className="serif-accent text-gold">Connection.</span>
           </h2>
           <p className="text-lede mt-7 text-mist">
-            Global Invitation is our curated membership, experiences, and opportunity-access
+            GLOBAL Invitational is our curated gatherings, experiences, and relationship
             platform — the place where people enter the GLOBAL ecosystem and where the most
             valuable relationships begin.
           </p>
@@ -327,8 +327,8 @@ export function InvitationFeatureSection() {
           </ul>
 
           <div className="mt-12 flex flex-col gap-3 xs:flex-row xs:flex-wrap">
-            <ButtonLink href="/invitation/apply" size="lg">
-              Request an Invitation
+            <ButtonLink href="/invitation/experiences/the-global-invitation-san-antonio-2027" size="lg">
+              Explore San Antonio 2027
             </ButtonLink>
             <ButtonLink href="/invitation" variant="outline-dark" size="lg">
               Discover Global Invitation
@@ -346,10 +346,10 @@ export function ConnectSection() {
   const routes = [
     {
       icon: Users,
-      title: "Explore membership",
-      body: "Learn how Global Invitation membership works, who it is designed for, and how to request an invitation.",
-      href: "/invitation/membership",
-      cta: "Explore membership",
+      title: "Explore the Invitational",
+      body: "Discover the San Antonio edition and a recurring international series of curated experiences.",
+      href: "/invitation",
+      cta: "Explore the series",
     },
     {
       icon: Handshake,

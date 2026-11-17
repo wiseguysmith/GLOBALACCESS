@@ -14,6 +14,7 @@ import { SplitFeature } from "@/components/sections/SplitFeature";
 import { NoticePanel } from "@/components/sections/NoticePanel";
 import { CtaBand } from "@/components/sections/CtaBand";
 import { JsonLd, breadcrumbJsonLd } from "@/lib/jsonld";
+import { InvitationalEvent } from "@/components/sections/InvitationalEvent";
 
 export const dynamicParams = false;
 
@@ -39,6 +40,7 @@ export default async function EventPage({ params }: PageProps<"/invitation/exper
   const { slug } = await params;
   const event = getEvent(slug);
   if (!event) notFound();
+  if (slug === "the-global-invitation-san-antonio-2027") return <InvitationalEvent />;
 
   const path = `/invitation/experiences/${event.slug}`;
   const partnershipHref = "/contact?topic=partnership";

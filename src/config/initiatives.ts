@@ -10,13 +10,13 @@ export const initiatives: Record<InitiativeId, Initiative> = {
     id: "invitation",
     kicker: "Flagship platform",
     index: "01",
-    name: "Global Invitation",
+    name: "GLOBAL Invitational",
     navLabel: "Invitation",
     tagline: "Access Begins With Connection.",
     summary:
-      "A curated membership, experiences, and opportunity-access platform for a carefully selected international community.",
+      "A recurring international series connecting people, capital, and markets through curated experiences and considered introductions.",
     description:
-      "Global Invitation brings together entrepreneurs, investors, institutional representatives, and strategic partners through curated membership, private gatherings, and considered introductions.",
+      "GLOBAL Invitational brings together entrepreneurs, investors, institutional representatives, and strategic partners through private gatherings and considered introductions.",
     role: "The engagement layer — where people enter the ecosystem and relationships begin.",
     href: "/invitation",
     image: {

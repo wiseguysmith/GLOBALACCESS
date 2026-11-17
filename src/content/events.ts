@@ -11,14 +11,16 @@ import type { GlobalEvent } from "@/types";
 const events: GlobalEvent[] = [
   {
     slug: "the-global-invitation-san-antonio-2027",
-    title: "The Global Invitation",
+    title: "GLOBAL Invitational — San Antonio 2027",
     format: "Flagship Gathering",
-    tagline: "Private markets. Modern financial rails. Real relationships.",
+    tagline: "Where Capital Meets Opportunity",
     location: "San Antonio, Texas",
     venue: "Golf day at Briggs Ranch Golf Club",
-    dateLabel: "February 2027 · Exact dates to be announced",
+    dateLabel: "February 3–4, 2027",
+    startDate: "2027-02-03",
+    endDate: "2027-02-04",
     summary:
-      "A two-day, invitation-only gathering bringing together private markets, modern financial infrastructure, and the relationships that connect them — spanning traditional finance, FinTech, and decentralized finance.",
+      "Golf at Briggs Ranch on February 3. The Future in Finance Summit in San Antonio on February 4. A $10,000 two-person golf team includes two Summit admissions upon full payment. Registration opening soon.",
     description: [
       "The Global Invitation is the flagship gathering of the Global Invitation community: two days in San Antonio designed around considered conversation rather than crowded exhibition halls.",
       "The first day takes place on the course, with curated pairings and an evening reception. The second day convenes a capital summit focused on private markets and the financial infrastructure now taking shape around them, followed by small, private investor salons.",
@@ -32,14 +34,14 @@ const events: GlobalEvent[] = [
     status: "announced",
     verification: "verified",
     cta: {
-      label: "Request an Invitation",
-      href: "/invitation/apply?event=The%20Global%20Invitation%20%E2%80%94%20San%20Antonio%202027",
+      label: "Explore San Antonio 2027",
+      href: "/invitation/experiences/the-global-invitation-san-antonio-2027",
     },
     highlights: [
       { label: "Format", value: "Two days", note: "Golf, then summit" },
-      { label: "Participants", value: "~150", note: "Planned, curated capacity" },
+      { label: "Team price", value: "$10,000", note: "Two golfers · both days" },
       { label: "Golf field", value: "40 teams", note: "80 players, curated pairings" },
-      { label: "Access", value: "Invitation only", note: "Requests reviewed individually" },
+      { label: "Registration", value: "Opening soon", note: "Summit-only requests reviewed separately" },
     ],
     agenda: [
       {

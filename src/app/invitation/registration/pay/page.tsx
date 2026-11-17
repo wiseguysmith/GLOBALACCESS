@@ -1,0 +1,3 @@
+import { PaymentLinkForm } from "@/components/forms/PaymentLinkForm";
+export const metadata = { title: "Linked team payment | GLOBAL", robots: { index: false, follow: false } };
+export default function PaymentLinkPage() { return <section className="event-section event-utility-page"><div className="container-x max-w-2xl"><p className="eyebrow text-gold-ink">GLOBAL Invitational</p><h1 className="event-heading mt-6">Your private<br/>registration link.</h1><p className="my-8">Review your invitation email and the amount and package shown at secure checkout. Linked golf shares require both $5,000 payments to clear before a team is confirmed. A standalone Summit invitation covers February 4 only.</p><PaymentLinkForm/></div></section>; }

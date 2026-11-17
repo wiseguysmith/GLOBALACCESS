@@ -49,7 +49,7 @@ export default function ExperiencesPage() {
           </p>
         }
         actions={
-          <ButtonLink href="/invitation/apply?interest=Events%20and%20Experiences" size="lg">
+          <ButtonLink href="/invitation/experiences/the-global-invitation-san-antonio-2027" size="lg">
             Request an Invitation
           </ButtonLink>
         }
@@ -139,7 +139,7 @@ export default function ExperiencesPage() {
               <Lock aria-hidden="true" className="size-6 text-gold" strokeWidth={1.25} />
               <h3 className="mt-6 font-display text-2xl font-medium">Invitation only</h3>
               <p className="mt-3 leading-relaxed text-mist">
-                Most Global Invitation experiences are reserved for members and invited guests.
+                GLOBAL Invitational experiences bring together curated participants and invited guests.
                 Requests are reviewed individually, and capacity is deliberately limited. Some
                 elements — such as private salons — have further limited access.
               </p>
@@ -168,10 +168,10 @@ export default function ExperiencesPage() {
         }
         actions={
           <>
-            <ButtonLink href="/contact?topic=partnership" size="lg">
+            <ButtonLink href="/invitation/inquire/sponsor" size="lg">
               Start a partnership conversation
             </ButtonLink>
-            <ButtonLink href="/invitation/apply" variant="outline-dark" size="lg">
+            <ButtonLink href="/invitation/inquire/summit" variant="outline-dark" size="lg">
               Request an Invitation
             </ButtonLink>
           </>

@@ -27,7 +27,7 @@ export const siteConfig = {
    * Public contact email. Leave empty until an inbox is confirmed;
    * the contact page routes visitors to the inquiry form instead.
    */
-  contactEmail: "",
+  contactEmail: "info@globalaccess.live",
 } as const;
 
 export const primaryNav: NavItem[] = [
@@ -44,10 +44,10 @@ export const primaryCta: NavItem = { label: "Connect With GLOBAL", href: "/conta
 
 export const invitationNav: NavItem[] = [
   { label: "Overview", href: "/invitation" },
-  { label: "Membership", href: "/invitation/membership" },
+  { label: "San Antonio 2027", href: "/invitation/experiences/the-global-invitation-san-antonio-2027" },
   { label: "Experiences", href: "/invitation/experiences" },
   { label: "Opportunities", href: "/invitation/opportunities" },
-  { label: "Apply", href: "/invitation/apply" },
+  { label: "Summit Invitation", href: "/invitation/inquire/summit" },
 ];
 
 export const legalNav: NavItem[] = [

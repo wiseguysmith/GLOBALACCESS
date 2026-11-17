@@ -1,5 +1,40 @@
 @import "tailwindcss";
 
+/* Invitational edition: shared GLOBAL colors and type, deliberately scoped. */
+.event-section { padding-block: clamp(4rem, 8vw, 7.5rem); }
+.event-utility-page { background: linear-gradient(to bottom, #101e30 0 var(--header-h), #f7f7f4 var(--header-h)); padding-top: calc(var(--header-h) + 4rem); }
+body:has(.event-utility-page) .site-header { background: #101e30; }
+.event-heading { font-size: clamp(2.2rem, 4.2vw, 4.5rem); line-height: 1.12; letter-spacing: -.04em; font-weight: 500; }
+.event-hero { position: relative; overflow: hidden; background: #101e30; color: white; }
+.event-hero-lines { position: absolute; inset: 0; background: radial-gradient(ellipse at 90% 20%, #52664b55, transparent 60%), repeating-radial-gradient(ellipse at 115% 60%, transparent 0 45px, #c7a66d19 46px 47px, transparent 48px 72px); }
+.event-button { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 48px; padding: .9rem 1.5rem; background: #c7a66d; color: #101e30; font-weight: 600; line-height: 1.4; border: 1px solid transparent; text-align: center; transition: background .2s; cursor: pointer; }
+.event-button:hover { background: #e6d6b4; }
+.event-button:disabled { opacity: .65; cursor: not-allowed; }
+.event-button-outline { border-color: #ffffff55; color: white; background: transparent; }
+.event-button-outline:hover { color: #101e30; }
+.event-button-light { background: transparent; border-color: #101e3055; }
+.event-anchor-nav { background: #f7f7f4; border-bottom: 1px solid #101e3022; }
+.event-anchor-nav a { min-height: 32px; display: flex; align-items: center; }
+.event-day-card { display: block; background: #fff; border: 1px solid #101e3022; padding: clamp(1.5rem, 3vw, 2.8rem); }
+.event-day-card h3 { font-size: 1.8rem; line-height: 1.2; margin-block: 1rem; }
+.event-day-card p { line-height: 1.75; color: #3a4556; }
+.event-venue-art { min-height: 420px; color: #e6d6b4; padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between; background: repeating-radial-gradient(ellipse at 80% 70%, transparent 0 28px, #c7a66d33 29px 30px, transparent 31px 45px), linear-gradient(150deg,#172536,#304536); }
+.event-faq { border-top: 1px solid #101e3030; padding-block: 1.5rem; }
+.event-faq summary { cursor: pointer; font-size: 1.15rem; font-weight: 500; padding-right: 1rem; }
+.event-faq p { margin-top: 1rem; color: #3a4556; line-height: 1.8; }
+.event-form { background: white; border: 1px solid #101e3022; padding: clamp(1.3rem,3vw,2.5rem); display: grid; gap: 1.5rem; }
+.event-form fieldset { min-width: 0; }
+.event-field { display: flex; flex-direction: column; gap: .6rem; font-size: .9rem; font-weight: 500; min-width: 0; }
+.event-field input,.event-field select,.event-field textarea { width: 100%; min-width: 0; min-height: 48px; border: 1px solid #101e3044; background: #f7f7f4; border-radius: 0; padding: .8rem; font-weight: 400; }
+.event-field [aria-invalid=true] { border-color: #9b2c2c; }
+.event-option { display:flex; align-items: center; gap: 1rem; padding: 1rem; border: 1px solid #101e3033; }
+.event-option small { display: block; color: #5f687b; margin-top: .3rem; }
+.event-notice { border-left: 3px solid #7d5f2a; padding: .8rem 1rem; background: #f7f7f4; font-size: .9rem; line-height: 1.7; }
+.event-sticky { position: sticky; bottom: 0; z-index: 30; border-top: 1px solid #c7a66d55; background: #101e30; color: white; box-shadow: 0 -8px 24px #101e3015; }
+.event-sticky-secondary { display: inline-flex; align-items: center; min-height: 44px; font-size: .85rem; text-decoration: underline; text-underline-offset: 4px; padding: .5rem; }
+.invitational-page section[id] { scroll-margin-top: calc(var(--header-h) + 1rem); }
+@media (max-width: 480px) { .event-sticky .event-button { padding: .65rem .8rem; font-size: .75rem; } .event-sticky-secondary { font-size: .75rem; } .event-sticky p { display: none; } .event-sticky .container-x > div { display:grid; grid-template-columns:1fr 1fr; width:100%; } }
+
 /* ---------------------------------------------------------------------------
    GLOBAL design tokens
    --------------------------------------------------------------------------- */

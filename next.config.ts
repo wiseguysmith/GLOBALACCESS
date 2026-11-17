@@ -43,13 +43,11 @@ const nextConfig: NextConfig = {
     qualities: [70, 80],
     deviceSizes: [640, 828, 1080, 1280, 1600, 1920, 2200],
   },
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
+  async redirects() {
+    return [
+      { source: "/invitation/membership", destination: "/invitation", statusCode: 301 },
+      { source: "/invitation/apply", destination: "/invitation/experiences/the-global-invitation-san-antonio-2027", statusCode: 301 },
+    ];
   },
   async headers() {
     return [
