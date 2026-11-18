@@ -20,8 +20,8 @@ export const initiatives: Record<InitiativeId, Initiative> = {
     role: "The engagement layer — where people enter the ecosystem and relationships begin.",
     href: "/invitation",
     image: {
-      src: "/images/banquet.webp",
-      alt: "A long dinner table set with glassware and flowers beneath warm lights",
+      src: "/images/briggs-clubhouse.webp",
+      alt: "Aerial view of the Briggs Ranch clubhouse and surrounding golf course at golden hour",
     },
     theme: { accent: "#C7A66D", accentInk: "#7D5F2A", mood: "Exclusive, experiential" },
   },

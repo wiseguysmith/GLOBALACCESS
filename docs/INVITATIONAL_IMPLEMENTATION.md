@@ -14,9 +14,11 @@ Feature branch: `feat/invitational-registration`. Existing GitHub/Netlify hostin
 
 Mobile uses stacked day cards, shallow anchor navigation, native FAQ disclosure and a compact sticky registration bar. Existing navy, ivory, gold and typography are preserved. The shared homepage's Invitational feature and entry CTAs were updated without redesigning unrelated initiatives.
 
-## Asset plan
+## GLOBAL Signature design update
 
-Abstract contour artwork is explicitly an illustration. Pending licensed gallery: fairway aerial, signature hole, Spanish-style clubhouse, 18th green/veranda, casitas, hospitality, and optional golf action. Deliver local optimized WebP/AVIF variants, accurate alt text and written license/attribution evidence. No generated image should masquerade as actual venue photography.
+Owner selected a balance of private-club luxury and modern finance, then authorized implementation. The series and edition pages now use full-bleed photography, editorial serif typography, a warm golf chapter, a navy Summit chapter, horizontal venue gallery with native-dialog lightbox, a unified team-experience panel, compact sticky registration shortcuts and a quieter registration preview while sales remain closed. The homepage's Invitational imagery and date were updated to match; unrelated initiative content is preserved.
+
+The owner confirmed written commercial-use permission for Briggs Ranch/Dormie photography in chat on November 17, 2026. Seven photographs were downloaded from the official gallery, resized/compressed locally to WebP, and credited in `public/images/CREDITS.md`. No hotlinks or generated venue imagery. The existing licensed conference image is explicitly labeled editorial and does not imply a confirmed Summit venue. Photography permission does not open checkout or approve charity, hospitality, lodging or payment terms.
 
 ## Architecture
 

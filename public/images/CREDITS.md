@@ -30,3 +30,17 @@ Source IDs are listed so each photo can be traced and its photographer credited 
 Event imagery (`event-golf.webp`, `event-dining.webp`, `event-san-antonio.webp`) was carried
 over from the Investor Golf Capital Summit site (igcs.netlify.app). Confirm usage rights for
 these before launch.
+
+## Briggs Ranch photography — GLOBAL Signature redesign
+
+Commercial-use permission confirmed by the website owner in this chat on November 17, 2026. Source: official Dormie Network Briggs Ranch photo gallery. Images downloaded locally and resized/compressed to WebP; no hotlinks or generated venue photographs. Permission confirmation covers photography; no Dormie logo asset was added.
+
+| Local file | Official source |
+| --- | --- |
+| briggs-green.webp | https://images.squarespace-cdn.com/content/v1/61df380b5fb02b0f290a928f/0915ec22-f085-4838-ae7d-086ab0fb8d46/MRH15270.jpg |
+| briggs-veranda.webp | https://images.squarespace-cdn.com/content/v1/61df380b5fb02b0f290a928f/f8ce6d70-3f53-4ffb-bdd6-2956ff57707d/BR-Clubhouse_Veranda.jpg |
+| briggs-casita.webp | https://images.squarespace-cdn.com/content/v1/61df380b5fb02b0f290a928f/ef4a9345-440b-4c11-8fc7-04716d003ebc/BR-20240221-DJI_0113_BR_2024_3+%281%29.jpg |
+| briggs-aerial.webp | https://images.squarespace-cdn.com/content/v1/61df380b5fb02b0f290a928f/db3b3b22-d57f-4ec2-b3c9-7d327befbcfa/BR-20240222-DJI_0870.jpg |
+| briggs-fairway.webp | https://images.squarespace-cdn.com/content/v1/61df380b5fb02b0f290a928f/cb0159a4-d254-4fb6-8991-7eefd808179b/DJI_0196+%281%29.jpg |
+| briggs-garden.webp | https://images.squarespace-cdn.com/content/v1/61df380b5fb02b0f290a928f/73a19bc8-b6b2-450d-8c66-8d22b8d44319/BR-Garden_Seating.jpg |
+| briggs-clubhouse.webp | https://images.squarespace-cdn.com/content/v1/61df380b5fb02b0f290a928f/fa7c8c94-6c2c-4352-9d67-cecf897d8fd3/BR-Clubhouse-Aerial-MH.jpg |

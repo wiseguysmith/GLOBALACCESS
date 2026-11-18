@@ -27,8 +27,8 @@ const events: GlobalEvent[] = [
       "Participation is curated and by invitation. The program, speakers, and summit-day venue will be announced as they are confirmed.",
     ],
     image: {
-      src: "/images/event-golf.webp",
-      alt: "Morning light over the fairways and bunkers of a tree-lined golf course",
+      src: "/images/briggs-aerial.webp",
+      alt: "Golden-hour aerial view of the course and casitas at Briggs Ranch Golf Club",
     },
     visibility: "invitation-only",
     status: "announced",

@@ -1,6 +1,7 @@
 export const SAN_ANTONIO_PATH = "/invitation/experiences/the-global-invitation-san-antonio-2027";
 // Owner/counsel review must change these deliberately, with supporting evidence.
-export const publicEventApprovals = { charityGuarantee: false, bundledHospitality: false, lodgingTerms: false, venueImages: false, summitPrice: false };
+// Venue-photo commercial permission confirmed by owner in chat, November 17, 2026.
+export const publicEventApprovals = { charityGuarantee: false, bundledHospitality: false, lodgingTerms: false, venueImages: true, summitPrice: false };
 export const eventFaqs = [
   ["What does a golf team cost?", "$10,000 for two golfers. You can pay in full or use two linked $5,000 payments. One $5,000 payment is half a team, not a separately bookable team or an individual confirmed spot."],
   ["Do golfers need a separate Summit invitation?", "No. A fully paid team receives two Summit admissions automatically. No second purchase or Summit application is required."],

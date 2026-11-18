@@ -276,7 +276,7 @@ export function InvitationFeatureSection() {
               <p className="eyebrow text-gold">{flagship.format}</p>
               <p className="mt-3 font-display text-xl font-medium text-white">{flagship.title}</p>
               <p className="mt-1 text-sm text-white/70">
-                {flagship.location} · February 2027
+                {flagship.location} · February 3–4, 2027
               </p>
               <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-white">
                 View the gathering
@@ -293,7 +293,7 @@ export function InvitationFeatureSection() {
             <span className="serif-accent text-gold">Connection.</span>
           </h2>
           <p className="text-lede mt-7 text-mist">
-            GLOBAL Invitational is our curated gatherings, experiences, and relationship
+            GLOBAL Invitational is our platform for curated gatherings, experiences, and relationships
             platform — the place where people enter the GLOBAL ecosystem and where the most
             valuable relationships begin.
           </p>

@@ -10,7 +10,7 @@ Updated November 17, 2026. **Not ready to accept production money. No deployment
 - Document $100,000 charity funding, award custody, eligible recipients, selection/allocation, tie/dispute rules and required insurance. Source materials conflict about allocation. The public guarantee and award split are deliberately hidden pending written approval.
 - Confirm Summit venue and logistics. Public wording currently says San Antonio, venue to be announced; approve before publication.
 - Approve lodging dates, eligibility, pricing/inclusion, assignments and overflow arrangements. 60 beds / 15 casitas does not cover 80 golfers.
-- Obtain commercial photo and brand-use permission. No Briggs Ranch photos, logos, or scraped hotlinks were added. Approved 5–8-image gallery remains pending.
+- Completed for photography: owner confirmed written commercial-use permission in chat on November 17, 2026. Seven official Briggs Ranch photographs are stored locally as optimized WebP assets with source credits. Four appear in the interactive gallery. No Dormie Network logo was added. Preserve the underlying permission record and comply with its license terms.
 - Approve standalone $1,200 Summit price and merchant product treatment before activating live standalone checkout. Working sponsor tiers remain unpublished.
 - Approve staging preview, test orders, confirmation wording, inventory recovery, reporting and customer-support runbook before enabling production.
 

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope, Newsreader } from "next/font/google";
 import "@/styles/globals.css";
+import "@/styles/signature.css";
 import { siteConfig } from "@/config/site";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
