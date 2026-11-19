@@ -27,7 +27,7 @@ create table public.event_outbox (
   claimed_until timestamptz, last_error text
 );
 create table public.event_leads (
-  id uuid primary key default gen_random_uuid(), category text not null check(category in ('summit','sponsor','vendor','general','future')),
+  id uuid primary key default gen_random_uuid(), category text not null check(category in ('golf','summit','sponsor','vendor','general','future')),
   payload jsonb not null, status text not null default 'new', created_at timestamptz not null default now()
 );
 alter table public.event_teams enable row level security;

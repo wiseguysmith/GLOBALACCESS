@@ -13,6 +13,6 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
 export default async function InquiryPage({ params }: { params: Promise<{ category: string }> }) {
   const { category } = await params; if (!categories.includes(category as LeadCategory)) notFound();
   const kind = category as LeadCategory;
-  const enabled = leadDeliveryReady();
+  const enabled = leadDeliveryReady() && (kind !== "golf" || process.env.EVENT_GOLF_APPLICATIONS_ENABLED === "true");
   return <div className="invitational-page"><section className="event-section event-utility-page"><div className="container-x max-w-4xl"><Link href={SAN_ANTONIO_PATH} className="text-sm underline">← Back to San Antonio 2027</Link><p className="eyebrow text-gold-ink mt-12">GLOBAL Invitational</p><h1 className="event-heading mt-6 mb-10">{leadLabels[kind]}</h1><EventLeadForm category={kind} enabled={enabled}/></div></section></div>;
 }

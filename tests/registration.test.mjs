@@ -4,6 +4,7 @@ import { readFile } from 'node:fs/promises';
 import { PGlite } from '@electric-sql/pglite';
 import { obligations, validateGolfers, teamStatus } from '../src/lib/registration/model.ts';
 import { validateLead } from '../src/lib/registration/leads.ts';
+import { tournamentDetails, tournamentDetailsPending } from '../src/config/invitational.ts';
 
 async function database() {
   const db = new PGlite();
@@ -21,6 +22,26 @@ test('server prices and input validation match owner offer', () => {
   assert.equal(validateGolfers(golfers),true); assert.equal(validateGolfers([golfers[0],golfers[0]]),false);
   assert.equal(teamStatus([{amount:500000,status:'paid'}],1000000,'HELD_PENDING_PAYMENT'),'PARTIALLY_PAID');
   assert.equal(teamStatus([{amount:1000000,status:'paid'}],1000000,'EXPIRED'),'MANUAL_REVIEW');
+});
+test('golf applications require two distinct golfers and teammate permission', () => {
+  const valid={name:'Captain',email:'captain@example.test',teammateName:'Teammate',teammateEmail:'teammate@example.test',background:'Founder',consent:true,teammateConsent:true};
+  assert.deepEqual(validateLead('golf',valid).errors,{});
+  assert.ok(validateLead('golf',{...valid,teammateEmail:'CAPTAIN@example.test'}).errors.teammateEmail);
+  assert.ok(validateLead('golf',{...valid,teammateConsent:false}).errors.teammateConsent);
+  assert.ok(validateLead('golf',{...valid,teammateName:''}).errors.teammateName);
+});
+test('competition fields remain explicitly pending without invented tournament rules',()=>{
+  assert.equal(tournamentDetails.length,4); assert.equal(tournamentDetailsPending,true);
+  assert.ok(tournamentDetails.every(detail=>detail.value===null));
+});
+test('golf application migration stores a categorized lead without reserving inventory',async()=>{
+  const db=await database(); try {
+    await db.exec(await readFile(new URL('../supabase/event-team-applications.sql',import.meta.url),'utf8'));
+    await db.query('select public.save_event_lead($1,$2::jsonb,$3)',['golf',JSON.stringify({email:'captain@example.test',teammateEmail:'teammate@example.test'}),'staff@example.test']);
+    assert.equal((await db.query('select category from event_leads')).rows[0].category,'golf');
+    assert.equal((await db.query('select * from event_teams')).rows.length,0);
+    assert.equal((await db.query('select * from event_outbox')).rows.length,2);
+  }finally{await db.close();}
 });
 test('lead category fields, separate sharing consent, no arbitrary options', () => {
   const {errors,output}=validateLead('summit',{name:'Test',email:'test@example.test',phone:'123456789',organization:'Test Co',role:'Founder',title:'CEO',interest:'Private markets',consent:true});

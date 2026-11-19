@@ -20,7 +20,7 @@ const events: GlobalEvent[] = [
     startDate: "2027-02-03",
     endDate: "2027-02-04",
     summary:
-      "Golf at Briggs Ranch on February 3. The Future in Finance Summit in San Antonio on February 4. A $10,000 two-person golf team includes two Summit admissions upon full payment. Registration opening soon.",
+      "Golf at Briggs Ranch on February 3. The Future in Finance Summit in San Antonio on February 4. A $10,000 two-person golf team includes two Summit admissions upon full payment. Team participation is subject to review and acceptance.",
     description: [
       "The Global Invitation is the flagship gathering of the Global Invitation community: two days in San Antonio designed around considered conversation rather than crowded exhibition halls.",
       "The first day takes place on the course, with curated pairings and an evening reception. The second day convenes a capital summit focused on private markets and the financial infrastructure now taking shape around them, followed by small, private investor salons.",
@@ -41,7 +41,7 @@ const events: GlobalEvent[] = [
       { label: "Format", value: "Two days", note: "Golf, then summit" },
       { label: "Team price", value: "$10,000", note: "Two golfers · both days" },
       { label: "Golf field", value: "40 teams", note: "80 players, curated pairings" },
-      { label: "Registration", value: "Opening soon", note: "Summit-only requests reviewed separately" },
+      { label: "Registration", value: "Subject to approval", note: "Apply for a team place" },
     ],
     agenda: [
       {

@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 const origin=process.env.EVENT_SMOKE_ORIGIN || 'http://127.0.0.1:3000';
 const event='/invitation/experiences/the-global-invitation-san-antonio-2027';
-const routes=['/', '/invitation',event,...['summit','sponsor','vendor','general','future'].map(k=>`/invitation/inquire/${k}`),'/invitation/event-terms','/invitation/registration/pay','/invitation/registration/return','/south','/digital','/capital'];
+const routes=['/', '/invitation',event,...['golf','summit','sponsor','vendor','general','future'].map(k=>`/invitation/inquire/${k}`),'/invitation/event-terms','/invitation/registration/pay','/invitation/registration/return','/south','/digital','/capital'];
 for(const path of routes) { const response=await fetch(origin+path); assert.equal(response.status,200,path); const html=await response.text(); assert.equal((html.match(/<h1[\s>]/g)||[]).length,1,`one h1: ${path}`); console.log(`PASS 200 + one heading: ${path}`); }
 for(const path of ['/invitation/membership','/invitation/apply']) { const response=await fetch(origin+path,{redirect:'manual'}); assert.equal(response.status,301,path); console.log(`PASS 301: ${path}`); }
 assert.equal((await fetch(origin+'/invitation/inquire/unknown')).status,404);
@@ -11,4 +11,5 @@ assert.equal((await fetch(origin+'/api/event/stripe',{method:'POST',body:'{}'}))
 const html=await(await fetch(origin+event)).text();
 assert.ok(html.includes('$10,000')); assert.ok(html.includes('February 3')); assert.ok(html.includes('February 4'));
 assert.ok(html.includes('60 golfer beds')); assert.ok(!html.includes('guaranteed $100,000'));
+assert.ok(html.includes('A curated field.')); assert.ok(html.includes('Apply for a Team Place')); assert.ok(html.includes('To be confirmed')); assert.ok(html.includes('Participation subject to approval'));
 console.log('PASS public copy, admin protection, webhook unavailable, unknown route');

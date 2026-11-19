@@ -1,14 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Check, Flag, Plus } from "lucide-react";
-import { publicEventApprovals, SAN_ANTONIO_PATH, eventFaqs } from "@/config/invitational";
-import { registrationMode } from "@/lib/registration/gates";
-import { checkoutReady } from "@/lib/registration/backend";
-import { GolfRegistrationForm } from "@/components/forms/GolfRegistrationForm";
+import { publicEventApprovals, TEAM_APPLICATION_PATH, eventFaqs, tournamentDetails, tournamentDetailsPending } from "@/config/invitational";
 import { SignatureGallery } from "./SignatureGallery";
 
 export function InvitationalEvent() {
-  const mode = checkoutReady() ? registrationMode() : "closed";
   return (
     <div className="signature-page sg-event">
       <section className="sg-hero" aria-label="GLOBAL Invitational San Antonio 2027">
@@ -17,10 +13,10 @@ export function InvitationalEvent() {
         <div className="sg-hero-inner">
           <div className="sg-edition-line"><Link href="/invitation">GLOBAL <em>Invitational</em></Link><span>San Antonio, Texas <i/> 2027 Edition</span></div>
           <div className="sg-hero-copy">
-            <p className="sg-kicker"><span/> An exceptional setting. A considered connection.</p>
-            <h1>Where Capital<br/>Meets <em>Opportunity.</em></h1>
+            <p className="sg-kicker"><span/> Selective entry. Meaningful competition.</p>
+            <h1>A curated field.<br/><em>A competitive spirit.</em></h1>
             <div className="sg-hero-bottom">
-              <p>Two days at the intersection of<br className="sg-desktop-break"/> extraordinary experiences and the future of finance.</p>
+              <div><p className="sg-hero-description">Forty two-person teams. Eighteen holes at Briggs Ranch.<br className="sg-desktop-break"/> Competitive golf followed by the Future in Finance Summit.</p><p className="sg-hero-entry">$10,000 per team · Participation subject to approval</p><div className="sg-hero-actions"><Link href={TEAM_APPLICATION_PATH} className="sg-button">Apply for a Team Place <ArrowUpRight size={18}/></Link><Link href="/invitation/inquire/sponsor" className="sg-text-link">Explore Sponsorship <ArrowUpRight size={18}/></Link></div></div>
               <a className="sg-round-link" href="#overview" aria-label="Discover the San Antonio edition"><span>Discover the<br/>San Antonio edition</span><span className="sg-circle"><ArrowDown size={25} strokeWidth={1.3} aria-hidden="true"/></span></a>
             </div>
           </div>
@@ -35,7 +31,7 @@ export function InvitationalEvent() {
         <a href="#register"><span>Your team experience</span><strong>$10,000<span> / two golfers</span></strong><ArrowUpRight size={22} strokeWidth={1.3}/></a>
       </div>
 
-      <nav className="sg-subnav" aria-label="Event sections"><div className="sg-container"><a href="#golf">01 <span>The Invitational</span></a><a href="#summit">02 <span>The Summit</span></a><a href="#venue">The setting</a><a href="#included">The experience</a><a href="#faq">Good to know</a><a href="#register" className="sg-subnav-cta">Golf registration <ArrowUpRight size={16}/></a></div></nav>
+      <nav className="sg-subnav" aria-label="Event sections"><div className="sg-container"><a href="#golf">01 <span>The Invitational</span></a><a href="#competition">Competition details</a><a href="#summit">02 <span>The Summit</span></a><a href="#included">The experience</a><a href="#partners">Sponsorship</a><a href="#register" className="sg-subnav-cta">Team selection <ArrowUpRight size={16}/></a></div></nav>
 
       <section id="overview" className="sg-intro sg-container">
         <div className="sg-margin-note"><span className="sg-kicker">The San Antonio edition</span><p>Good company.<br/>Shared perspective.<br/>A world of possibility.</p><span className="sg-tiny-mark" aria-hidden="true">G / I</span></div>
@@ -49,11 +45,13 @@ export function InvitationalEvent() {
           <p className="sg-kicker">The Golf Invitational</p>
           <h2>An extraordinary round.<br/><em>An extraordinary room.</em></h2>
           <p>Briggs Ranch. A private Tom Fazio design in the Texas Hill Country. A field of 40 two-person teams, and the space to make a conversation count.</p>
-          <p>Experience 18 holes with a community connected by curiosity, ambition, and a shared appreciation for relationships that last beyond the round.</p>
+          <p>Expect meaningful competition alongside considered connections. Teams are reviewed before acceptance, bringing a selective field together for 18 holes of competitive golf and the following day’s Summit.</p>
           <div className="sg-course-specs"><div><strong>18</strong><span>Holes of golf</span></div><div><strong>40</strong><span>Two-person teams</span></div><div><strong>01</strong><span>Exceptional course</span></div></div>
-          <a href="#register" className="sg-text-link">Explore the team experience <ArrowUpRight size={18}/></a>
+          <Link href={TEAM_APPLICATION_PATH} className="sg-text-link">Apply for a Team Place <ArrowUpRight size={18}/></Link>
         </div>
       </section>
+
+      <section id="competition" className="sg-format sg-container" aria-labelledby="competition-heading"><div><p className="sg-kicker">The competition</p><h2 id="competition-heading">The field is curated.<br/><em>The golf is competitive.</em></h2><p>Forty two-person teams. Eighteen holes. Tournament format, handicap requirements, and official competition rules will be announced once finalized.</p><span className="sg-format-status">{tournamentDetailsPending ? "Final competition details to follow" : "Competition details"}</span></div><dl className="sg-format-details">{tournamentDetails.map(detail=><div key={detail.label}><dt>{detail.label}</dt><dd className={detail.value ? "" : "sg-format-pending"}>{detail.value ?? "To be confirmed"}</dd></div>)}</dl></section>
 
       <section id="summit" className="sg-summit">
         <div className="sg-container">
@@ -72,7 +70,7 @@ export function InvitationalEvent() {
       <section id="included" className="sg-package">
         <div className="sg-container sg-package-layout">
           <div className="sg-package-intro"><p className="sg-kicker">Your team experience</p><h2>One team.<br/>Two days.<br/><em>More possibilities.</em></h2><p>The fairways are the beginning. Your golf-team package brings the complete two-day experience together for both players.</p><div className="sg-package-stamp"><span>GLOBAL</span><em>Invitational</em><small>San Antonio / 2027</small></div></div>
-          <div className="sg-package-details"><div className="sg-package-price"><p>$10,000</p><span>USD / two-person team<br/>Both days included</span></div><p className="sg-package-status">{publicEventApprovals.bundledHospitality ? "Included for both golfers" : "Planned inclusions · final arrangements being secured"}</p><ul>{["Two entries in the Golf Invitational","Food & beverages on both days","Two Future in Finance Summit admissions","VIP fireside-chat access","Private side-room / salon access","Company-hosted dinner seating"].map(item=><li key={item}><Check size={16} strokeWidth={1.4}/><span>{item}</span></li>)}</ul><p className="sg-package-note">VIP experiences are part of the planned golf package. On-site lodging is limited and is not universally included.</p><a className="sg-button sg-button-dark" href="#register">Explore Golf Registration <ArrowUpRight size={19}/></a><p className="sg-small">Summit only? <Link href="/invitation/inquire/summit">Request an invitation separately.</Link></p></div>
+          <div className="sg-package-details"><div className="sg-package-price"><p>$10,000</p><span>USD / two-person team<br/>Subject to acceptance</span></div><p className="sg-package-status">{publicEventApprovals.bundledHospitality ? "Included for both golfers" : "Planned inclusions · final arrangements being secured"}</p><ul>{["Two entries in the Golf Invitational","Food & beverages on both days","Two Future in Finance Summit admissions","VIP fireside-chat access","Private side-room / salon access","Company-hosted dinner seating"].map(item=><li key={item}><Check size={16} strokeWidth={1.4}/><span>{item}</span></li>)}</ul><p className="sg-package-note">VIP experiences are part of the planned golf package. On-site lodging is limited and is not universally included. Application review comes before payment.</p><Link className="sg-button sg-button-dark" href={TEAM_APPLICATION_PATH}>Apply for a Team Place <ArrowUpRight size={19}/></Link><p className="sg-small">Summit only? <Link href="/invitation/inquire/summit">Request an invitation separately.</Link></p></div>
         </div>
       </section>
 
@@ -80,7 +78,7 @@ export function InvitationalEvent() {
 
       <section className="sg-stay"><div className="sg-stay-image"><Image src="/images/briggs-casita.webp" alt="A Briggs Ranch casita with a shaded terrace beside the course" fill quality={80} sizes="(min-width: 900px) 60vw, 100vw"/></div><div className="sg-stay-copy"><p className="sg-kicker">Stay & hospitality</p><h2>Make room<br/>for <em>the experience.</em></h2><p>Southwestern architecture. Quiet terraces. A private-club setting that extends beyond the course.</p><p>On-site stays are limited to up to 60 golfer beds across 15 casitas, against a field of 80. Eligibility, dates, allocations, and any inclusion or additional cost will be confirmed separately. An on-site room is not guaranteed for every golfer.</p><Link className="sg-text-link" href="/invitation/inquire/general">Ask about your stay <ArrowUpRight size={18}/></Link></div></section>
 
-      <section id="register" className="sg-registration sg-container"><div><p className="sg-kicker">Join the San Antonio edition</p><h2>Your next<br/><em>great connection.</em></h2><p>Choose one full payment or two linked shares. Both options create one two-person team, confirmed after the full $10,000 clears.</p><div className="sg-pay-options"><div><span>One payer</span><strong>$10,000</strong><small>One complete team</small></div><div><span>Two linked payers</span><strong>$5,000 <i>each</i></strong><small>Both payments required</small></div></div><p className="sg-small">40 teams total. This is event capacity, not a live count of remaining places.</p></div><div className="sg-registration-panel">{mode === "closed" ? <><p className="sg-kicker">Golf registration</p><h3>Something exceptional<br/>is taking shape.</h3><p>Registration is opening soon. We’re finalizing the package and event terms before accepting payments.</p><a href="mailto:info@globalaccess.live" className="sg-button sg-button-dark">Speak with the event team <ArrowUpRight size={18}/></a><p className="sg-small">info@globalaccess.live</p><details className="sg-form-preview"><summary>Preview team registration <Plus size={16}/></summary><GolfRegistrationForm mode={mode}/></details></> : <GolfRegistrationForm mode={mode}/>}</div></section>
+      <section id="register" className="sg-registration sg-container"><div><p className="sg-kicker">A considered path to the field</p><h2>Your team.<br/><em>By invitation.</em></h2><p>Submit your two-person team for organizer review. Participation is subject to approval. Accepted teams will be invited to complete secure payment when registration opens; team confirmation follows full payment.</p><ol className="sg-entry-steps">{["Application","Organizer review","Acceptance","Secure payment","Team confirmation"].map((step,index)=><li key={step}><span>0{index+1}</span>{step}</li>)}</ol><div className="sg-pay-options"><div><span>After acceptance · one payer</span><strong>$10,000</strong><small>One complete team</small></div><div><span>After acceptance · linked payers</span><strong>$5,000 <i>each</i></strong><small>Both payments required</small></div></div><p className="sg-small">40 teams total. Applications do not reserve a place. No payment is requested with an application.</p></div><div className="sg-registration-panel"><p className="sg-kicker">Selective entry. Competitive golf.</p><h3>Apply for your place<br/>in the field.</h3><p>$10,000 per two-person team, subject to acceptance. Share both golfers’ details and your interest in the Invitational for organizer review.</p><Link href={TEAM_APPLICATION_PATH} className="sg-button sg-button-dark">Apply for a Team Place <ArrowUpRight size={18}/></Link><Link href="/invitation/inquire/sponsor" className="sg-text-link">Explore Sponsorship <ArrowUpRight size={18}/></Link><p className="sg-small">Questions? <a href="mailto:info@globalaccess.live">info@globalaccess.live</a></p></div></section>
 
       <section id="faq" className="sg-faq sg-container"><div><p className="sg-kicker">Before you join us</p><h2>A few<br/><em>good details.</em></h2><p>Questions about the experience?<br/><a href="mailto:info@globalaccess.live">info@globalaccess.live</a></p></div><div>{eventFaqs.map(([question,answer])=><details key={question}><summary>{question}<Plus size={18} strokeWidth={1.2}/></summary><p>{answer}</p></details>)}</div></section>
 
@@ -88,7 +86,7 @@ export function InvitationalEvent() {
 
       <section className="sg-closing"><Image src="/images/briggs-veranda.webp" alt="Evening light on the Briggs Ranch clubhouse veranda" fill quality={80} sizes="100vw"/><div className="sg-closing-shade"/><div className="sg-container"><p className="sg-kicker">The GLOBAL Invitational series</p><h2>San Antonio is<br/><em>only the beginning.</em></h2><p>One network. New perspectives. Further editions planned across U.S. and international destinations.</p><div><Link href="/invitation/inquire/future" className="sg-button">Get Future Event Updates <ArrowUpRight size={18}/></Link><Link href="/invitation" className="sg-text-link">Discover the series <ArrowRight size={18}/></Link></div><small>Future locations and dates will be announced when confirmed.</small></div></section>
 
-      <aside className="sg-booking-bar" aria-label="Registration shortcuts"><Link href="/invitation" className="sg-booking-mark">GLOBAL <em>Invitational</em></Link><p>San Antonio <span> / February 3–4, 2027</span></p><div><Link href="/invitation/inquire/summit" className="sg-booking-secondary">Summit invitation <ArrowUpRight size={15}/></Link><a href={`${SAN_ANTONIO_PATH}#register`} className="sg-button">{mode === "closed" ? "Golf Registration · Opening Soon" : "Reserve a Golf Team — $10,000"}<ArrowUpRight size={16}/></a></div></aside>
+      <aside className="sg-booking-bar" aria-label="Participation shortcuts"><Link href="/invitation" className="sg-booking-mark">GLOBAL <em>Invitational</em></Link><p>$10,000 per team <span> / Subject to approval</span></p><div><Link href="/invitation/inquire/sponsor" className="sg-booking-secondary">Explore Sponsorship <ArrowUpRight size={15}/></Link><Link href={TEAM_APPLICATION_PATH} className="sg-button">Apply for a Team Place<ArrowUpRight size={16}/></Link></div></aside>
     </div>
   );
 }

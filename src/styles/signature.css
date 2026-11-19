@@ -17,6 +17,24 @@
 .sg-kicker > span { display: block; width: 22px; height: 1px; background: currentColor; }
 .sg-small { font-size: .75rem; line-height: 1.8; }
 .sg-small a { text-decoration: underline; text-underline-offset: 4px; }
+.sg-hero-description { color:#ffffffe0; font-size:.9rem; line-height:1.9; }
+.sg-hero-entry { margin-top:.8rem; font-size:.7rem; letter-spacing:.025em; color:#ead9b5; }
+.sg-hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:1.5rem; margin-top:1.4rem; }
+.sg-hero-actions .sg-text-link { color:#f5ecdc; }
+.sg-format { display:grid; grid-template-columns:1fr 1fr; gap:6rem; padding-block:5rem; }
+.sg-format h2 { margin-top:1.5rem; font-size:clamp(2.5rem,3.5vw,4rem); }
+.sg-format > div > p:not(.sg-kicker) { font-size:.9rem; color:var(--sg-copy); line-height:1.9; margin-top:1.5rem; }
+.sg-format-status { display:inline-block; margin-top:1.5rem; padding:.6rem .8rem; background:var(--sg-paper); color:#66664f; font-size:.65rem; letter-spacing:.06em; }
+.sg-format-details { display:grid; grid-template-columns:1fr 1fr; gap:0 2rem; align-content:center; }
+.sg-format-details > div { padding-block:1.5rem; border-top:1px solid #14282230; }
+.sg-format-details dt { font-size:.75rem; font-weight:500; }
+.sg-format-details dd { margin-top:.7rem; font-size:.85rem; line-height:1.7; }
+.sg-format-pending { font-family:Georgia,serif; font-style:italic; color:#77765c; }
+.sg-entry-steps { display:grid; gap:.9rem; margin-top:1.7rem; }
+.sg-entry-steps li { display:flex; gap:1rem; align-items:center; font-size:.8rem; }
+.sg-entry-steps li > span { font-family:Georgia,serif; color:#89826a; font-size:.85rem; }
+@media(max-width:850px) { .sg-format { grid-template-columns:1fr; gap:2rem; padding-block:4rem; } }
+@media(max-width:540px) { .sg-hero-description { font-size:.76rem; } .sg-hero-entry { font-size:.63rem; } .sg-hero-actions { gap:.8rem; } .sg-hero-actions .sg-button { padding:.8rem 1rem; font-size:.7rem; } .sg-hero-actions .sg-text-link { font-size:.65rem; } .sg-format-details { gap:0 1.2rem; } }
 .sg-button { display: inline-flex; align-items: center; justify-content: space-between; gap: 1.8rem; min-height: 52px; padding: 1rem 1.5rem; background: var(--sg-gold); color: var(--sg-navy); border: 1px solid transparent; font-size: .75rem; font-weight: 500; letter-spacing: .015em; transition: background .25s, color .25s; }
 .sg-button:hover { background: #decaa7; }
 .sg-button-dark { background: var(--sg-ink); color: var(--sg-cream); }

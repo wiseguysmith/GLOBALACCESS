@@ -16,6 +16,9 @@ Updated November 17, 2026. **Not ready to accept production money. No deployment
 
 ## Technical setup and external verification
 
+- November 19 selection update: golf teams now require organizer review before acceptance. The former public team-checkout endpoint is disabled. Implement and test an approval-bound golf payment invitation before enabling golf sales; the existing Summit approval flow does not approve golf teams.
+- Apply `supabase/event-team-applications.sql` to existing event databases before enabling online golf applications. Set `EVENT_GOLF_APPLICATIONS_ENABLED=true` only after migration, monitored delivery and end-to-end review testing. Until then, the new team-application page provides the public email fallback.
+
 - Apply `supabase/event-registration.sql` to a dedicated **staging** Supabase database first. This is a one-time migration; do not run repeatedly or against unreviewed production data.
 - Configure environment variables from `.env.event.example` in the appropriate Netlify deployment context. Never paste keys into chat or commit `.env.local`.
 - Use Stripe **test** keys and a test webhook first. No Stripe account, keys, webhook registration or Resend destination were supplied or inspected in this session.
