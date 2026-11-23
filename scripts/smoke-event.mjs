@@ -12,4 +12,5 @@ const html=await(await fetch(origin+event)).text();
 assert.ok(html.includes('$10,000')); assert.ok(html.includes('February 3')); assert.ok(html.includes('February 4'));
 assert.ok(html.includes('60 golfer beds')); assert.ok(!html.includes('guaranteed $100,000'));
 assert.ok(html.includes('A curated field.')); assert.ok(html.includes('Apply for a Team Place')); assert.ok(html.includes('To be confirmed')); assert.ok(html.includes('Participation subject to approval'));
+assert.ok(html.includes('Ten foundational content pillars')); assert.ok(html.includes('DeFi Lending')); assert.ok(html.includes('Planned program')); assert.ok(html.includes('Summit marketplace')); assert.ok(html.includes('6:30 p.m.')); assert.ok(html.includes('$1,200'));
 console.log('PASS public copy, admin protection, webhook unavailable, unknown route');

@@ -1,4 +1,5 @@
 import type { GlobalEvent } from "@/types";
+import { summitPillars } from "./summit";
 
 /**
  * Event registry for Global Invitation experiences.
@@ -23,7 +24,7 @@ const events: GlobalEvent[] = [
       "Golf at Briggs Ranch on February 3. The Future in Finance Summit in San Antonio on February 4. A $10,000 two-person golf team includes two Summit admissions upon full payment. Team participation is subject to review and acceptance.",
     description: [
       "The Global Invitation is the flagship gathering of the Global Invitation community: two days in San Antonio designed around considered conversation rather than crowded exhibition halls.",
-      "The first day takes place on the course, with curated pairings and an evening reception. The second day convenes a capital summit focused on private markets and the financial infrastructure now taking shape around them, followed by small, private investor salons.",
+      "Day one brings a selective field of 40 two-person teams to Briggs Ranch for competitive golf. Day two is planned around finance keynotes, panels, educational workshops, a marketplace, and an evening reception. Session timings, speakers, and the Summit venue remain subject to confirmation.",
       "Participation is curated and by invitation. The program, speakers, and summit-day venue will be announced as they are confirmed.",
     ],
     image: {
@@ -48,33 +49,26 @@ const events: GlobalEvent[] = [
         label: "Day One",
         title: "The Invitational",
         items: [
-          "VIP welcome",
-          "Investor golf experience at Briggs Ranch Golf Club",
-          "Curated pairings, with investor and executive networking on the course",
-          "Premium hospitality and on-course partner experiences",
-          "Athlete participation and a charitable component",
-          "Evening awards and private reception",
+          "18-hole golf at Briggs Ranch Golf Club for up to 40 two-person teams",
+          "Team application review before acceptance and payment",
+          "Food, beverages, and on-course hospitality subject to final contracts",
+          "Competition format and official rules to be announced",
+          "Charitable program subject to approved funding and rules",
         ],
       },
       {
         label: "Day Two",
-        title: "The Capital Summit",
+        title: "Future in Finance Summit — proposed program",
         items: [
-          "Capital summit sessions",
-          "Investment and innovation showcase",
-          "Private investor dinners and salons (limited access)",
+          "Keynotes and panels across ten foundational finance topics",
+          "Educational workshops, including a proposed DeFi lending session",
+          "Marketplace access during planned lunch and networking periods",
+          "Separate screened investment presentations, with applicable disclosures",
+          "Evening reception planned from 6:30 p.m.; final schedule to follow",
         ],
       },
     ],
-    themes: [
-      "Private markets",
-      "Tokenization",
-      "Stablecoins",
-      "Digital wealth",
-      "Real-world assets",
-      "Custody and compliance",
-      "Financial infrastructure",
-    ],
+    themes: summitPillars.map(pillar => pillar.title),
     salonThemes: [
       "Private credit",
       "Tokenized assets",
@@ -93,7 +87,6 @@ const events: GlobalEvent[] = [
       "FinTech leaders",
       "Digital asset infrastructure firms",
       "Founders",
-      "Athletes",
     ],
     partnerTiers: [
       "Title Partner",
@@ -108,7 +101,7 @@ const events: GlobalEvent[] = [
     notes: [
       "Speakers and participants will be announced as they are confirmed.",
       "Salon access is limited and is not included automatically with summit attendance.",
-      "Dates, the summit-day venue, and program details are subject to confirmation.",
+      "The Summit venue, speakers, session timings, and program details remain subject to confirmation.",
       "Participation does not constitute an offer of, or solicitation for, any security or investment.",
     ],
   },

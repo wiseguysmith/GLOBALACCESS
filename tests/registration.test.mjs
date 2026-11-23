@@ -5,6 +5,7 @@ import { PGlite } from '@electric-sql/pglite';
 import { obligations, validateGolfers, teamStatus } from '../src/lib/registration/model.ts';
 import { validateLead } from '../src/lib/registration/leads.ts';
 import { tournamentDetails, tournamentDetailsPending } from '../src/config/invitational.ts';
+import { summitPillars, summitSchedule, workshopCandidates } from '../src/content/summit.ts';
 
 async function database() {
   const db = new PGlite();
@@ -33,6 +34,20 @@ test('golf applications require two distinct golfers and teammate permission', (
 test('competition fields remain explicitly pending without invented tournament rules',()=>{
   assert.equal(tournamentDetails.length,4); assert.equal(tournamentDetailsPending,true);
   assert.ok(tournamentDetails.every(detail=>detail.value===null));
+});
+test('public Summit preview covers all ten pillars and separates proposed program elements',()=>{
+  assert.equal(summitPillars.length,10);
+  assert.equal(new Set(summitPillars.map(p=>p.title)).size,10);
+  assert.equal(summitSchedule.length,4);
+  assert.ok(summitSchedule.some(item=>item.time==='From 6:30 p.m.'));
+  assert.ok(summitSchedule.find(item=>item.title==='Explore the marketplace').description.includes('pauses'));
+  assert.ok(workshopCandidates.includes('Compliance'));
+});
+test('sponsorship inquiries remain single-city and support program partnerships',()=>{
+  const base={name:'Test',email:'test@example.test',organization:'Example',role:'Lead',interest:'Workshop',edition:'San Antonio 2027',message:'Partnership discussion',consent:true};
+  assert.deepEqual(validateLead('sponsor',base).errors,{});
+  assert.ok(validateLead('sponsor',{...base,edition:'Future editions'}).errors.edition);
+  assert.ok(validateLead('sponsor',{...base,edition:'Both'}).errors.edition);
 });
 test('golf application migration stores a categorized lead without reserving inventory',async()=>{
   const db=await database(); try {
