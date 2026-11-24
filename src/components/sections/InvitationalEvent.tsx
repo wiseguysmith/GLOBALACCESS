@@ -4,10 +4,11 @@ import { ArrowDown, ArrowRight, ArrowUpRight, Check, Flag, Plus } from "lucide-r
 import { publicEventApprovals, TEAM_APPLICATION_PATH, eventFaqs, tournamentDetails, tournamentDetailsPending } from "@/config/invitational";
 import { SignatureGallery } from "./SignatureGallery";
 import { SummitProgram } from "./SummitProgram";
+import { SignatureMotion } from "./SignatureMotion";
 
 export function InvitationalEvent() {
   return (
-    <div className="signature-page sg-event">
+    <SignatureMotion>
       <section className="sg-hero" aria-label="GLOBAL Invitational San Antonio 2027">
         <Image className="sg-hero-image" src="/images/briggs-aerial.webp" alt="Golden light over the fairways and casitas at Briggs Ranch Golf Club in San Antonio" fill preload quality={80} sizes="100vw"/>
         <div className="sg-hero-shade"/>
@@ -90,6 +91,6 @@ export function InvitationalEvent() {
       <section className="sg-closing"><Image src="/images/briggs-veranda.webp" alt="Evening light on the Briggs Ranch clubhouse veranda" fill quality={80} sizes="100vw"/><div className="sg-closing-shade"/><div className="sg-container"><p className="sg-kicker">The GLOBAL Invitational series</p><h2>San Antonio is<br/><em>only the beginning.</em></h2><p>One network. New perspectives. Further editions planned across U.S. and international destinations.</p><div><Link href="/invitation/inquire/future" className="sg-button">Get Future Event Updates <ArrowUpRight size={18}/></Link><Link href="/invitation" className="sg-text-link">Discover the series <ArrowRight size={18}/></Link></div><small>Future locations and dates will be announced when confirmed.</small></div></section>
 
       <aside className="sg-booking-bar" aria-label="Participation shortcuts"><Link href="/invitation" className="sg-booking-mark">GLOBAL <em>Invitational</em></Link><p>$10,000 per team <span> / Subject to approval</span></p><div><Link href="/invitation/inquire/sponsor" className="sg-booking-secondary">Explore Sponsorship <ArrowUpRight size={15}/></Link><Link href={TEAM_APPLICATION_PATH} className="sg-button">Apply for a Team Place<ArrowUpRight size={16}/></Link></div></aside>
-    </div>
+    </SignatureMotion>
   );
 }
