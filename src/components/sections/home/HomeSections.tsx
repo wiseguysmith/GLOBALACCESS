@@ -2,12 +2,69 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Compass, Handshake, Users } from "lucide-react";
 import { initiativeList, initiatives } from "@/config/initiatives";
+import { siteConfig } from "@/config/site";
 import { getFlagshipEvent } from "@/content/events";
 import { ButtonLink, ArrowLink } from "@/components/ui/Button";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FocusGrid } from "@/components/sections/FocusGrid";
 import { InitiativeCard } from "@/components/sections/InitiativeCard";
+
+const sanAntonioInquiries = [
+  {
+    title: "Golf Team",
+    description: "Ask about entering a two-person team for the Invitational at Briggs Ranch.",
+    action: "Email about golf",
+  },
+  {
+    title: "Summit Invitation",
+    description: "Express interest in the Future in Finance Summit in San Antonio.",
+    action: "Email about Summit invitations",
+  },
+  {
+    title: "Sponsorship",
+    description: "Start a conversation about partnering with GLOBAL for San Antonio 2027.",
+    action: "Email about sponsorship",
+  },
+];
+
+export function SanAntonioInquirySection() {
+  const flagship = getFlagshipEvent();
+  if (!flagship) return null;
+
+  return (
+    <section id="san-antonio-2027" aria-labelledby="san-antonio-inquiries" className="surface-dark scroll-mt-[var(--header-h)] border-t border-gold/20 bg-navy py-14 text-white sm:py-20">
+      <div className="container-x">
+        <Eyebrow tone="dark">GLOBAL Invitational</Eyebrow>
+        <h2 id="san-antonio-inquiries" className="text-headline mt-4">
+          San Antonio <span className="serif-accent text-gold">2027</span>
+        </h2>
+        <p className="text-lede mt-4 max-w-2xl text-mist">
+          The GLOBAL Invitational brings together competitive team golf at Briggs Ranch on February 3 and
+          the Future in Finance Summit in San Antonio, Texas.
+        </p>
+        <ArrowLink href={`/invitation/experiences/${flagship.slug}`} className="mt-4 text-white">
+          Explore the Invitational
+        </ArrowLink>
+        <ul className="mt-8 grid gap-3 md:grid-cols-3">
+          {sanAntonioInquiries.map(({ title, description, action }) => (
+            <li key={title} className="flex flex-col border border-white/15 bg-midnight/45 p-5 sm:p-6">
+              <h3 className="font-display text-xl text-white">{title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-mist">{description}</p>
+              <a
+                href={`mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(`GLOBAL Homepage | San Antonio 2027 | ${title}`)}`}
+                className="mt-4 inline-flex min-h-11 items-center gap-2 self-start text-sm font-medium text-gold underline-offset-4 hover:underline"
+              >
+                {action}
+                <ArrowRight aria-hidden="true" className="size-4 shrink-0" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+  );
+}
 
 /* ------------------------------------------------------------- Hero index */
 

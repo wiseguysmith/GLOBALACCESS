@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buildMetadata } from "@/lib/seo";
 import { siteConfig } from "@/config/site";
 import { ButtonLink } from "@/components/ui/Button";
@@ -6,7 +7,7 @@ import {
   BridgingWorldsSection,
   ConnectSection,
   EcosystemSection,
-  HeroIndex,
+  SanAntonioInquirySection,
   InvitationFeatureSection,
   PhilosophySection,
 } from "@/components/sections/home/HomeSections";
@@ -34,6 +35,15 @@ export default function HomePage() {
         imagePosition="center 60%"
         title={
           <>
+            <Image
+              src="/images/global-access-lockup.png"
+              alt="GLOBAL Access"
+              width={1600}
+              height={533}
+              sizes="(min-width: 640px) 360px, 75vw"
+              loading="eager"
+              className="-ml-[5%] mb-5 h-auto w-[min(75vw,22.5rem)] mix-blend-screen [mask-image:radial-gradient(ellipse_at_center,black_68%,transparent_100%)]"
+            />
             Bridging Worlds.
             <br />
             <span className="serif-accent text-gold">Expanding Access.</span>
@@ -47,17 +57,16 @@ export default function HomePage() {
         }
         actions={
           <>
-            <ButtonLink href="/ecosystem" size="lg">
-              Explore Our Ecosystem
+            <ButtonLink href="#san-antonio-2027" size="lg">
+              Explore San Antonio 2027
             </ButtonLink>
-            <ButtonLink href="/invitation" variant="outline-dark" size="lg">
-              Discover Global Invitation
+            <ButtonLink href="/ecosystem" variant="outline-dark" size="lg">
+              Explore Our Ecosystem
             </ButtonLink>
           </>
         }
-      >
-        <HeroIndex />
-      </PageHero>
+      />
+      <SanAntonioInquirySection />
       <EcosystemSection />
       <BridgingWorldsSection />
       <PhilosophySection />
