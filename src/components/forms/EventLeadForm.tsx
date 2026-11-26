@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 import { useRef, useState, type FormEvent } from "react";
 import { leadFields, leadLabels, type LeadCategory } from "@/lib/registration/leads";
 export function EventLeadForm({ category, enabled }: { category: LeadCategory; enabled: boolean }) {
@@ -18,7 +19,17 @@ export function EventLeadForm({ category, enabled }: { category: LeadCategory; e
     } catch { setMessage("We could not confirm submission. Please try again."); } finally { setBusy(false); }
   }
   return <form ref={formRef} className="event-form" onSubmit={submit} onFocus={() => { if (!started.current) started.current = Date.now(); }} aria-label={leadLabels[category]}>
-    {!enabled && <p className="event-notice">{category === "golf" ? "Online team applications are opening soon. To apply now, email " : "Online inquiries are opening soon. Please email "}<a className="underline" href={category === "golf" ? "mailto:info@globalaccess.live?subject=San%20Antonio%202027%20Team%20Application" : "mailto:info@globalaccess.live"}>info@globalaccess.live</a>{category === "golf" ? " with both golfers’ names and your contact details. No payment is requested with your application." : " about your request."} Submissions through this form are currently disabled.</p>}
+    {!enabled && (
+      <div className="event-notice">
+        <p>{category === "golf"
+          ? "Online team applications are closed. Email both golfers’ names and your contact details. No payment is requested."
+          : "Online inquiries are closed. Email us about your request."}</p>
+        <a className="underline" href={`mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(`San Antonio 2027 — ${leadLabels[category]}`)}`}>
+          {category === "summit" ? "Email for a Summit invitation" : "Email GLOBAL"}
+        </a>
+        <p>{siteConfig.contactEmail}</p>
+      </div>
+    )}
     {category === "golf" && <div className="space-y-3"><p><strong>A curated field. A competitive spirit.</strong> $10,000 per two-person team, subject to approval. Apply → Review → Acceptance → Payment → Confirmation.</p><p>Applications do not reserve a team place. Accepted teams will be invited to pay when registration opens. Tournament format, handicap requirements, and official competition rules will follow once finalized.</p></div>}
     {category === "summit" && <p>For Summit-only attendance on February 4. Golf teams receive their two Summit admissions automatically after full payment. No second application is required.</p>}
     {category === "summit" && <p>Planned standalone admission: $1,200 per person, including planned marketplace access. Final registration terms will be confirmed before payment opens. Golf, lodging, and golfers’ VIP experiences are excluded.</p>}

@@ -49,7 +49,7 @@ export default function ContactPage() {
             <ul className="mt-5 border-t border-navy/12">
               {pathways.map((p) => (
                 <li key={p.label} className="border-b border-navy/12">
-                  <a href={p.href} className="group flex items-center justify-between gap-4 py-4">
+                  <a href={enabled ? p.href : `mailto:${siteConfig.contactEmail}?subject=${encodeURIComponent(p.label)}`} className="group flex items-center justify-between gap-4 py-4">
                     <span>
                       <span className="block font-medium text-ink">{p.label}</span>
                       <span className="block text-sm text-slate">{p.body}</span>
@@ -65,14 +65,14 @@ export default function ContactPage() {
             </ul>
             {siteConfig.contactEmail ? (
               <p className="mt-8 text-sm text-ink-soft">
-                Or email{" "}
+                {enabled ? "Or email " : "Email "}
                 <a href={`mailto:${siteConfig.contactEmail}`} className="text-ink underline decoration-gold underline-offset-3">
                   {siteConfig.contactEmail}
                 </a>
               </p>
             ) : null}
             <p className="mt-8 text-sm leading-relaxed text-slate">
-              Please don&apos;t share confidential financial or personal documents through this form.
+              Please don&apos;t share confidential financial or personal documents in your inquiry.
               See our{" "}
               <Link href="/privacy" className="text-ink underline decoration-gold underline-offset-3">
                 Privacy Policy
@@ -81,7 +81,15 @@ export default function ContactPage() {
             </p>
           </aside>
           <div className="lg:col-span-8">
-            <InquiryForm enabled={enabled} />
+            {enabled ? <InquiryForm enabled /> : (
+              <div>
+                <h2 className="text-2xl font-semibold text-ink">Email GLOBAL</h2>
+                <p className="mt-3 text-slate">Online inquiries are closed. Choose a topic or email us directly.</p>
+                <a href={`mailto:${siteConfig.contactEmail}?subject=GLOBAL%20Inquiry`} className="event-button mt-5">
+                  Email GLOBAL
+                </a>
+              </div>
+            )}
           </div>
         </div>
       </section>

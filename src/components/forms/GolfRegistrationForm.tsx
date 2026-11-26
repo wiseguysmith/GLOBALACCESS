@@ -21,7 +21,7 @@ export function GolfRegistrationForm({ mode }: { mode: "closed" | "test" | "live
   }
   return <form className="event-form" onSubmit={submit} onFocus={() => { if (!started.current) started.current=Date.now(); }} aria-label="Golf team registration">
     <p className="event-notice">{mode === "closed" ? "Registration is not open yet. No payment is being accepted. Package details are shown for planning." : mode === "test" ? "TEST CHECKOUT — use Stripe test payment details only. This does not reserve a place at the event." : "Hosted secure checkout. Your team is confirmed after the full $10,000 clears."}</p>
-    {mode === "closed" && <p>Questions? <a className="underline" href="mailto:info@globalaccess.live">info@globalaccess.live</a></p>}
+    {mode === "closed" && <p>Questions? <a className="underline" href="mailto:info@mindfultech.services">info@mindfultech.services</a></p>}
     <fieldset disabled={mode === "closed" || busy} className="space-y-6"><legend className="sr-only">Two-person golf team</legend>
       {[0,1].map(i => <div key={i} className="grid gap-4 sm:grid-cols-2"><label className="event-field">Golfer {i+1} full name<input name={`name${i}`} required minLength={2} maxLength={120} autoComplete="off"/></label><label className="event-field">Golfer {i+1} email<input name={`email${i}`} type="email" required maxLength={254} autoComplete="off"/></label></div>)}
       <fieldset className="space-y-3"><legend className="font-medium mb-3">Choose how your team pays</legend>

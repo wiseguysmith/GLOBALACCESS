@@ -27,7 +27,7 @@ export const siteConfig = {
    * Public contact email. Leave empty until an inbox is confirmed;
    * the contact page routes visitors to the inquiry form instead.
    */
-  contactEmail: "info@globalaccess.live",
+  contactEmail: "info@mindfultech.services",
 } as const;
 
 export const primaryNav: NavItem[] = [
