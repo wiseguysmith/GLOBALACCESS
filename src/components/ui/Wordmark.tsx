@@ -1,4 +1,19 @@
+import Image from "next/image";
 import { cn } from "@/lib/cn";
+
+export function HeaderWordmark() {
+  return (
+    <Image
+      src="/images/global-access-lockup.png"
+      alt=""
+      width={1600}
+      height={533}
+      sizes="(min-width: 640px) 208px, 160px"
+      loading="eager"
+      className="h-auto w-40 mix-blend-lighten sm:w-52"
+    />
+  );
+}
 
 /**
  * GLOBAL mark: two intersecting rings — two worlds — with the shared

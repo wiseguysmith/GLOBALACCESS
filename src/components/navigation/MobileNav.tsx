@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import type { NavItem } from "@/types";
-import { Wordmark } from "@/components/ui/Wordmark";
+import { HeaderWordmark } from "@/components/ui/Wordmark";
 import { cn } from "@/lib/cn";
 import { isActivePath } from "./NavLinks";
 
@@ -81,8 +81,8 @@ export function MobileNav({
         className="surface-dark fixed inset-0 m-0 h-dvh max-h-none w-full max-w-none overflow-y-auto bg-navy p-0 text-white backdrop:bg-abyss/80 open:flex open:flex-col"
       >
         <div className="container-x flex h-[var(--header-h)] shrink-0 items-center justify-between border-b border-white/10">
-          <Link href="/" onClick={close} aria-label="GLOBAL — home">
-            <Wordmark />
+          <Link href="/" onClick={close} aria-label="GLOBAL Access home">
+            <HeaderWordmark />
           </Link>
           <button
             type="button"

@@ -211,7 +211,7 @@ body:has(.event-utility-page) .site-header { background: #101e30; }
 
 @keyframes header-solidify {
   from {
-    background-color: rgb(16 30 48 / 0);
+    background-color: #101e30;
     border-bottom-color: rgb(255 255 255 / 0);
     backdrop-filter: blur(0);
   }

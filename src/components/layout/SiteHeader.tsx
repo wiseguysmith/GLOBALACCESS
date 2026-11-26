@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { invitationNav, primaryCta, primaryNav } from "@/config/site";
-import { Wordmark } from "@/components/ui/Wordmark";
+import { HeaderWordmark } from "@/components/ui/Wordmark";
 import { ButtonLink } from "@/components/ui/Button";
 import { NavLinks } from "@/components/navigation/NavLinks";
 import { MobileNav } from "@/components/navigation/MobileNav";
@@ -11,10 +11,10 @@ export function SiteHeader() {
       <div className="container-x flex h-[var(--header-h)] items-center justify-between gap-6">
         <Link
           href="/"
-          aria-label="GLOBAL — home"
-          className="inline-flex min-h-11 items-center text-white"
+          aria-label="GLOBAL Access home"
+          className="inline-flex h-full shrink-0 items-center text-white"
         >
-          <Wordmark />
+          <HeaderWordmark />
         </Link>
 
         <nav aria-label="Primary" className="hidden xl:block">
