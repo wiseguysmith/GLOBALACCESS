@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/config/site";
 import { buildMetadata } from "@/lib/seo";
 import { LegalPage } from "@/components/sections/LegalPage";
 
@@ -14,11 +15,11 @@ export default function TermsPage() {
       eyebrow="Legal"
       title="Terms of Use"
       intro={<p>The terms that govern your use of globalaccess.live.</p>}
-      updated="Effective date: [to be set on legal approval]"
+      updated="Effective date: November 25, 2026"
     >
       <p>
         These Terms of Use (“Terms”) govern your access to and use of globalaccess.live (the “Site”),
-        operated by [Legal entity name] (“GLOBAL”, “we”, “us”). By using the Site, you agree to these
+        operated by Mindful Tech Corporation, a Wyoming corporation (“GLOBAL”, “we”, “us”). By using the Site, you agree to these
         Terms. If you do not agree, please do not use the Site.
       </p>
 
@@ -51,7 +52,7 @@ export default function TermsPage() {
       <p>
         Event information on the Site, including dates, venues, programs, and participants, may
         change. Attendance at any event is subject to its own terms and policies, which will be
-        provided to participants.
+        provided before any payment is requested. Those terms cover the price, inclusions, cancellations, and refunds.
       </p>
 
       <h2>5. Your responsibilities</h2>
@@ -83,30 +84,26 @@ export default function TermsPage() {
         reflects current intentions and may change.
       </p>
 
-      <h2>9. Limitation of liability</h2>
-      <p>
-        To the fullest extent permitted by law, GLOBAL will not be liable for any indirect,
-        incidental, special, consequential, or punitive damages, or for any loss arising from your
-        use of, or reliance on, the Site. [Counsel to confirm wording and any liability cap.]
-      </p>
-
-      <h2>10. Privacy</h2>
+      <h2>9. Privacy</h2>
       <p>
         Our <Link href="/privacy">Privacy Policy</Link> explains how we handle personal information.
       </p>
 
-      <h2>11. Governing law</h2>
-      <p>These Terms are governed by the laws of [jurisdiction to be determined by counsel].</p>
-
-      <h2>12. Changes</h2>
+      <h2>10. Changes</h2>
       <p>
         We may update these Terms from time to time. Continued use of the Site after changes take
         effect means you accept the revised Terms.
       </p>
 
-      <h2>13. Contact</h2>
+      <h2>11. Contact</h2>
       <p>
-        Questions about these Terms can be sent through our <Link href="/contact">contact page</Link>.
+        Questions about these Terms can be sent to{" "}
+        <a href={`mailto:${siteConfig.contactEmail}?subject=GLOBAL%20Website%20Terms`}>{siteConfig.contactEmail}</a>.
+      </p>
+      <p>
+        Mindful Tech Corporation<br />
+        5830 E 2nd St, Ste 7000 #26566<br />
+        Casper, WY 82609, USA
       </p>
     </LegalPage>
   );
