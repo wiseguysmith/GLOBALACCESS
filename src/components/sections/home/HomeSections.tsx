@@ -13,18 +13,18 @@ import { InitiativeCard } from "@/components/sections/InitiativeCard";
 const sanAntonioInquiries = [
   {
     title: "Golf Team",
-    description: "Ask about entering a two-person team for the Invitational at Briggs Ranch.",
-    action: "Email about golf",
+    description: "Email us with both golfers’ names. The event team will review your inquiry and share the next steps for applying. A team place is confirmed only after approval and full payment.",
+    action: "Ask about entering a team",
   },
   {
     title: "Summit Invitation",
-    description: "Express interest in the Future in Finance Summit in San Antonio.",
-    action: "Email about Summit invitations",
+    description: "Tell us a little about your work and what interests you about the Summit. We’ll follow up with invitation details as they become available.",
+    action: "Email about a Summit invitation",
   },
   {
     title: "Sponsorship",
-    description: "Start a conversation about partnering with GLOBAL for San Antonio 2027.",
-    action: "Email about sponsorship",
+    description: "Tell us about your organization and what you’d like to support. If there’s a fit, the team will follow up to discuss available opportunities.",
+    action: "Discuss sponsorship",
   },
 ];
 
@@ -40,13 +40,16 @@ export function SanAntonioInquirySection() {
           San Antonio <span className="serif-accent text-gold">2027</span>
         </h2>
         <p className="text-lede mt-4 max-w-2xl text-mist">
-          The GLOBAL Invitational brings together competitive team golf at Briggs Ranch on February 3 and
-          the Future in Finance Summit in San Antonio, Texas.
+          The GLOBAL Invitational brings together founders, investors, family offices, finance
+          professionals, and business leaders in San Antonio. The gathering begins with two-person
+          team golf at Briggs Ranch on February 3, followed by the Future in Finance Summit, where
+          participants explore practical developments in finance and cross-border business.
         </p>
         <ArrowLink href={`/invitation/experiences/${flagship.slug}`} className="mt-4 text-white">
           Explore the Invitational
         </ArrowLink>
-        <ul className="mt-8 grid gap-3 md:grid-cols-3">
+        <p className="mt-8 text-sm font-medium text-gold">Inquiries open by email</p>
+        <ul className="mt-3 grid gap-3 md:grid-cols-3">
           {sanAntonioInquiries.map(({ title, description, action }) => (
             <li key={title} className="flex flex-col border border-white/15 bg-midnight/45 p-5 sm:p-6">
               <h3 className="font-display text-xl text-white">{title}</h3>
@@ -61,6 +64,12 @@ export function SanAntonioInquirySection() {
             </li>
           ))}
         </ul>
+        <p className="mt-4 text-sm text-mist">
+          There&rsquo;s no payment to inquire. All three routes go to{" "}
+          <a href={`mailto:${siteConfig.contactEmail}`} className="text-gold underline underline-offset-4">
+            {siteConfig.contactEmail}
+          </a>.
+        </p>
       </div>
     </section>
   );
