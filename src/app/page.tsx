@@ -41,8 +41,10 @@ export default function HomePage() {
         }
         lede={
           <p>
-            Connecting capital, technology, markets, and people to unlock meaningful opportunities
-            across borders.
+            Doing business across borders means navigating unfamiliar markets and knowing who to turn to.
+            GLOBAL brings company leaders, capital providers, and regional experts together to exchange
+            practical knowledge, meet potential partners, and build relationships that help them expand
+            into new markets.
           </p>
         }
         actions={
