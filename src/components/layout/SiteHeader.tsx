@@ -12,7 +12,7 @@ export function SiteHeader() {
         <Link
           href="/"
           aria-label="GLOBAL Access home"
-          className="inline-flex h-full shrink-0 items-center text-white"
+          className="inline-flex h-full shrink-0 items-center text-white mix-blend-lighten"
         >
           <HeaderWordmark />
         </Link>

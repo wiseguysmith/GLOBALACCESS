@@ -125,7 +125,7 @@ export function EcosystemSection() {
             </p>
           }
         />
-        <div className="mt-16 grid gap-5 lg:mt-20 lg:grid-cols-12">
+        <div className="mt-16 grid gap-x-6 gap-y-10 lg:mt-20 lg:grid-cols-12">
           <InitiativeCard initiative={invitation} size="feature" className="lg:col-span-7" />
           <InitiativeCard initiative={south} size="feature" className="lg:col-span-5" />
           <InitiativeCard initiative={digital} className="lg:col-span-4" />

@@ -10,7 +10,7 @@ export function HeaderWordmark() {
       height={533}
       sizes="(min-width: 640px) 208px, 160px"
       loading="eager"
-      className="h-auto w-40 mix-blend-lighten sm:w-52"
+      className="h-auto w-40 sm:w-52"
     />
   );
 }

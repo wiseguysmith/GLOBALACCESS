@@ -197,7 +197,7 @@ body:has(.event-utility-page) .site-header { background: #101e30; }
    Falls back to a solid header where scroll-driven animations are unsupported.
    --------------------------------------------------------------------------- */
 .site-header {
-  background-color: rgb(16 30 48 / 0.96);
+  background-color: #101e30;
   border-bottom: 1px solid rgb(255 255 255 / 0.08);
 }
 
@@ -216,7 +216,7 @@ body:has(.event-utility-page) .site-header { background: #101e30; }
     backdrop-filter: blur(0);
   }
   to {
-    background-color: rgb(16 30 48 / 0.94);
+    background-color: #101e30;
     border-bottom-color: rgb(255 255 255 / 0.08);
     backdrop-filter: blur(14px);
   }
