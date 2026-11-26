@@ -1,9 +1,16 @@
 export const categories = ["golf", "summit", "sponsor", "vendor", "general", "future"] as const;
 export type LeadCategory = typeof categories[number];
+export const summitTopics = ["Private markets", "Digital assets", "Tokenization", "Real estate", "Global South emerging markets", "Impact and philanthropy"];
 export const leadLabels: Record<LeadCategory, string> = { golf: "Apply for a Team Place", summit: "Request a Summit Invitation", sponsor: "Become a Sponsor", vendor: "Apply as a Vendor", general: "Ask a Question", future: "Join Future Editions" };
 export const leadFields: Record<LeadCategory, { name: string; label: string; required?: boolean; options?: string[]; type?: string }[]> = {
   golf: [ { name: "teammateName", label: "Second golfer full name", required: true }, { name: "teammateEmail", label: "Second golfer email", type: "email", required: true }, { name: "background", label: "Professional background / role", required: true }, { name: "golfExperience", label: "Golf experience (optional)" } ],
-  summit: [ { name: "role", label: "Professional role", required: true }, { name: "title", label: "Title", required: true }, { name: "linkedin", label: "LinkedIn profile", type: "url" }, { name: "aum", label: "Firm assets under management (optional)", options: ["Prefer not to say", "Under $100 million", "$100 million–$1 billion", "Over $1 billion"] }, { name: "interest", label: "Topics of interest", required: true }, { name: "referral", label: "Referral / how you heard about us" } ],
+  summit: [
+    { name: "role", label: "Which best describes you?", required: true, options: ["Family office", "Private investor", "Wealth advisor / RIA", "Private bank", "Institution / fund", "Private equity / venture", "Founder", "Policymaker", "Media", "Other"] },
+    { name: "title", label: "Title", required: true },
+    { name: "linkedin", label: "LinkedIn profile", type: "url", required: true },
+    { name: "aum", label: "Firm assets under management or advised (optional, firms only)", options: ["Under $100M", "$100M–$500M", "$500M–$1B", "$1B–$5B", "$5B+", "Prefer not to say"] },
+    { name: "referral", label: "Invitation or referral code, or who referred you? (optional)" },
+  ],
   sponsor: [ { name: "role", label: "Your role", required: true }, { name: "interest", label: "Partnership focus", required: true, options: ["Title / presenting", "Hole partner", "Long drive", "Closest to pin", "Hospitality", "Summit", "Educational track", "Workshop", "Marketplace / exhibition", "Custom activation"] }, { name: "budget", label: "Approximate budget (optional)" }, { name: "edition", label: "Edition", required: true, options: ["San Antonio 2027"] } ],
   vendor: [ { name: "service", label: "Service or product", required: true }, { name: "edition", label: "Event day", required: true, options: ["Golf", "Summit", "Both"] }, { name: "requirements", label: "Space, electrical, or catering needs (optional)" } ],
   general: [ { name: "interest", label: "Question category", required: true, options: ["Tickets", "Lodging", "Sponsorship", "Vendor", "Accessibility", "Other"] } ],
@@ -21,6 +28,14 @@ export function validateLead(category: LeadCategory, body: Record<string, unknow
     output[field.name] = value;
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(output.email))) errors.email = "Enter a valid email address.";
+  if (category === "summit") {
+    const topics = body.topics ?? [];
+    if (!Array.isArray(topics) || topics.length > summitTopics.length || topics.some((topic) => !summitTopics.includes(topic))) {
+      errors.topics = "Choose from the listed topics.";
+    } else {
+      output.interest = summitTopics.filter((topic) => topics.includes(topic)).join(", ");
+    }
+  }
   if (category === "golf") {
     output.teammateEmail = String(output.teammateEmail).toLowerCase();
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(output.teammateEmail))) errors.teammateEmail = "Enter a valid second golfer email address.";

@@ -59,8 +59,12 @@ test('golf application migration stores a categorized lead without reserving inv
   }finally{await db.close();}
 });
 test('lead category fields, separate sharing consent, no arbitrary options', () => {
-  const {errors,output}=validateLead('summit',{name:'Test',email:'test@example.test',phone:'123456789',organization:'Test Co',role:'Founder',title:'CEO',interest:'Private markets',consent:true});
+  const profile = {name:'Test',email:'test@example.test',phone:'123456789',organization:'Test Co',role:'Founder',title:'CEO',linkedin:'https://www.linkedin.com/in/test-profile/',topics:['Private markets','Real estate'],consent:true};
+  const {errors,output}=validateLead('summit',profile);
   assert.deepEqual(errors,{}); assert.equal(output.sponsorSharing,false);
+  assert.equal(output.interest,'Private markets, Real estate');
+  assert.ok(validateLead('summit',{...profile,linkedin:''}).errors.linkedin);
+  assert.ok(validateLead('summit',{...profile,topics:['invented']}).errors.topics);
   assert.ok(validateLead('sponsor',{name:'Test',email:'test@example.test',organization:'Test',role:'Lead',interest:'invented',edition:'Both',message:'Hi',consent:true}).errors.interest);
 });
 test('full payment creates one team, exactly two unique included admissions; replay cannot duplicate', async () => {
