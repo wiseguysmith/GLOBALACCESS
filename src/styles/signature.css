@@ -194,7 +194,7 @@
 .sg-package-details > .sg-button { width: 100%; margin-top: 2rem; }
 .sg-package-details > .sg-small { margin-top: 1.3rem; }
 .sg-impact { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; padding-block: 7rem; align-items: center; }
-.sg-impact-number { font-family: Georgia,serif; font-size: clamp(4rem,8vw,9rem); letter-spacing: -.06em; line-height: 1; color: #deddd0; font-style: italic; }
+.sg-impact-number { display: block; margin-top: .55rem; font-family: Georgia,serif; font-size: clamp(3.5rem,8vw,8.5rem); letter-spacing: -.06em; line-height: 1; color: #7d5f2a; font-style: italic; }
 .sg-impact h2 { margin-top: 1.5rem; }
 .sg-impact p:not(.sg-kicker) { margin-top: 2rem; font-size: .94rem; line-height: 1.95; color: var(--sg-copy); }
 .sg-impact small { display: block; margin-top: 1rem; font-size: .65rem; line-height: 1.8; color: var(--sg-copy); }
@@ -415,9 +415,7 @@ body:has(.signature-page) .site-header { animation: none; background: #101e30eb;
   .sg-package-price > span { font-size:.6rem; }
   .sg-package-price > span br { display:initial; }
   .sg-impact { grid-template-columns:1fr; gap:2rem; }
-  .sg-impact-number { font-size:4rem; line-height:.9; }
-  .sg-impact-number br { display:none; }
-  .sg-impact-number { font-size:3.5rem; }
+  .sg-impact-number { font-size:clamp(3.5rem,13vw,6rem); }
   .sg-stay-image { aspect-ratio:4/3; }
   .sg-stay-copy { padding-inline:1.25rem; }
   .sg-registration-panel { padding:2rem 1.5rem; }

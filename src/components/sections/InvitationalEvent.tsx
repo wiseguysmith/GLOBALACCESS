@@ -78,7 +78,18 @@ export function InvitationalEvent() {
         </div>
       </section>
 
-      <section id="charity" className="sg-impact sg-container"><span className="sg-impact-number" aria-hidden="true">Beyond<br/>the score.</span><div><p className="sg-kicker">Competition with purpose</p><h2>Play for<br/><em>something larger.</em></h2><p>{publicEventApprovals.charityGuarantee ? "Teams will compete for a guaranteed $100,000 charitable purse, supporting eligible causes through the event’s official charitable award process." : "Charitable impact is central to the Invitational. The charitable program, eligible causes, and official award rules will be announced after funding and rules are approved."}</p><small>The charitable program benefits eligible causes; it is not a personal cash prize for golfers.</small></div></section>
+      <section id="charity" className="sg-impact sg-container" aria-labelledby="charity-heading">
+        <div>
+          <p className="sg-kicker">{publicEventApprovals.charityGuarantee ? "Charitable purse" : "Planned charitable purse"}</p>
+          <span className="sg-impact-number">$100,000</span>
+        </div>
+        <div>
+          <p className="sg-kicker">GLOBAL Invitational</p>
+          <h2 id="charity-heading">Golf for <em>charity.</em></h2>
+          <p>The winning teams will direct the sponsor-funded awards to eligible charities of their choice.</p>
+          {!publicEventApprovals.charityGuarantee && <small>Subject to confirmed sponsorship funding and approval of the official award rules.</small>}
+        </div>
+      </section>
 
       <section className="sg-stay"><div className="sg-stay-image"><Image src="/images/briggs-casita.webp" alt="A Briggs Ranch casita with a shaded terrace beside the course" fill quality={80} sizes="(min-width: 900px) 60vw, 100vw"/></div><div className="sg-stay-copy"><p className="sg-kicker">Stay & hospitality</p><h2>Make room<br/>for <em>the experience.</em></h2><p>Southwestern architecture. Quiet terraces. A private-club setting that extends beyond the course.</p><p>On-site stays are limited to up to 60 golfer beds across 15 casitas, against a field of 80. Eligibility, dates, allocations, and any inclusion or additional cost will be confirmed separately. An on-site room is not guaranteed for every golfer.</p><Link className="sg-text-link" href="/invitation/inquire/general">Ask about your stay <ArrowUpRight size={18}/></Link></div></section>
 
